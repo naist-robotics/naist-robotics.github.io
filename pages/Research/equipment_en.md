@@ -35,12 +35,10 @@ ___
 <span style="font-size: 150%">- Manipulator / Robotic Hand</span>  
 - <a href="{{ site.url }}{{ site.baseurl }}/Research/equipment/KUKA/">KUKA LBR iiwa</a>  
 <img src="{{ site.url }}{{ site.baseurl }}/images/KUKA.jpg" alt="KUKA" style="width: 200px;" style="height: 200px;"/>  
-<!--
 - <a href="{{ site.url }}{{ site.baseurl }}/Research/equipment/Finch/">Finch</a>  
 <img src="{{ site.url }}{{ site.baseurl }}/images/Finch.jpg" alt="Finch" style="width: 200px;" style="height: 200px;"/>  
 - <a href="{{ site.url }}{{ site.baseurl }}/Research/equipment/Rehand/">Rehand</a>  
 <img src="{{ site.url }}{{ site.baseurl }}/images/Rehand.jpg" alt="Rehand" style="width: 200px;" style="height: 200px;"/>  
--->
 </div>
 <div class="medium-6 medium-pull-6 columns" markdown="1">
 <span style="font-size: 150%">- Mobile Robot</span>  

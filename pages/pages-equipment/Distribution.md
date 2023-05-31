@@ -29,7 +29,7 @@ permalink: "/Research/equipment/Distribution/"
 </div>
 <br/>
 <br/>
-BIGMATは<a href="https://polhemus.com/">ニッタ社</a>が開発した，圧力分布を計測するためのセンサです．2枚のPETシートの間に碁盤の目のように電極が配置されており，それぞれの電極の表面には感圧導電塗料が塗布されています．外部から加えられた圧力によってその周辺の電極間の抵抗値が変化することを利用して，圧力分布を計測します．
+BIGMATは<a href="https://www.nitta.co.jp/product/sensor/big-mat_huge-mat/">ニッタ社</a>が開発した，圧力分布を計測するためのセンサです．2枚のPETシートの間に碁盤の目のように電極が配置されており，それぞれの電極の表面には感圧導電塗料が塗布されています．外部から加えられた圧力によってその周辺の電極間の抵抗値が変化することを利用して，圧力分布を計測します．
 
 <div class="image_margin" style>
     

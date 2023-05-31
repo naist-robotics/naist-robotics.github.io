@@ -30,7 +30,7 @@ permalink: "/Research/equipment/LADYBUG3/"
 </div>
 <br/>
 <br/>
-LADYBUG3は<a href="https://www.ptgrey.com/">Point Grey Research</a>が開発した全方位カメラです．
+LADYBUG3はPoint Grey Researchが開発した全方位カメラです．
 
 内蔵された6個のカメラからの画像を合成することにより全方位画像を取得するセンサです．
 

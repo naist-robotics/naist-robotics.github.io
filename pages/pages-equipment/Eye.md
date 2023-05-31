@@ -31,7 +31,7 @@ permalink: "/Research/equipment/Eye/"
 <br/>
 ViewPoint EyeTrackerは，<a href="http://www.arringtonresearch.com/">Arrington Research 社</a>が開発した頭部装着型の視線計測装置です．
 
-本研究室では環境中の自然特徴点を前方カメラを用いて取得するため，小型のIEEE1394 カメラである<a href="https://www.ptgrey.com/">Point Grey Research</a>製のFireFly MV に変更しています．
+本研究室では環境中の自然特徴点を前方カメラを用いて取得するため，小型のIEEE1394 カメラであるPoint Grey Research製のFireFly MV に変更しています．
 
 <div class="image_margin" style>
     

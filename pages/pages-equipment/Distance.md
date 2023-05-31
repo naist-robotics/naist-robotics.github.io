@@ -84,7 +84,7 @@ ___
 </div>
 <br/>
 <br/>
-SR4000は<a href="https://www.robotshop.com/en/mesa-imaging.html">MESA Imaging</a>が開発した，kinectは<a href="https://www.xbox.com/ja-JP/kinect">Microsoft</a>が開発した距離画像センサです．
+SR4000はMESA Imagingが開発した，kinectは<a href="https://www.xbox.com/ja-JP/kinect">Microsoft</a>が開発した距離画像センサです．
 
 SR4000はセンサから照射した光が反射して返ってくる到達時間を画素ごとに計測することにより，kinectは特定のパターンを投影し三角測量の原理で距離画像を取得するセンサです．
 

@@ -61,7 +61,7 @@ permalink: "/Research/equipment/Cyber/"
 ## <span style="font-size: 100%">研究事例</span>
 ___
 
-<a href="{{ site.url }}{{ site.baseurl }}/Research/topics/Cutkosky/">多指ハンドの姿勢生成</a>の研究にサイバーグローブを使用しています.
+多指ハンドの姿勢生成の研究にサイバーグローブを使用しています.
  
 <div style="text-align:center">
 <div class="flex-video">

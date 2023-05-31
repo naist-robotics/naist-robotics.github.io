@@ -12,9 +12,9 @@ permalink: "/AboutUs/member/"
 #### スタッフ
 ___
 
-|**教授** | <a href="{{ site.url }}{{ site.baseurl }}/members/ogasawar/">小笠原 司</a> |
-|**准教授** | <a href="{{ site.url }}{{ site.baseurl }}/members/j-taka/">高松 淳</a> |
-|**助教** | <a href="{{ site.url }}{{ site.baseurl }}/members/garcia-g/">GARCIA Gustavo</a> |
+|**教授** | <a href="https://robotics.naist.jp/members/ogasawar/">小笠原 司</a> |
+|**准教授** | <a href="https://robotics.naist.jp/members/j-taka/">高松 淳</a> |
+|**助教** | <a href="https://robotics.naist.jp/members/garcia-g/">GARCIA Gustavo</a> |
 |**助教** | <a href="https://sungi-ch.github.io/">趙 崇貴</a> |
 |**客員准教授** |　<a href="http://www.dingming.info/">丁 明</a> |
 |**秘書** | 大脇 美千代  | 池田 美輝  |

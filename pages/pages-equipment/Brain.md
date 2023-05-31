@@ -29,7 +29,7 @@ permalink: "/Research/equipment/Brain/"
 </div>
 <br/>
 <br/>
-脳波血流計 Polymate AP1000 は，<a href="http://www.hoovers.com/company-information/cs/company-profile.digitex_labcoltd.b168b0b99c6e8fe3.html">株式会社デジテックス研究所</a>が開発した，生体アンプ内蔵の携帯型生体信号記録装置です．
+脳波血流計 Polymate AP1000 は，株式会社デジテックス研究所が開発した，生体アンプ内蔵の携帯型生体信号記録装置です．
 
 32チャンネルの信号を最高2000Hzでサンプリング可能です．
 

@@ -31,7 +31,7 @@ permalink: "/Research/equipment/Power/"
 <br/>
 ロボティクス研究室には複数の力センサがあり，計測可能な軸数や定格容量に違いがあります．目的に応じて使い分けることでより正確なデータを取得することが容易になります．  
 <br/>
-<a href="https://www.bl-autotec.co.jp/FA/">BLオートテック</a>
+<a href="https://www.bl-autotec.co.jp/">BLオートテック</a>
 <br/>
 <a href="https://www.ati-ia.com/products/ft/sensors.aspx">ATI Industrial</a>
 <br/>
