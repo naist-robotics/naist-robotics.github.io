@@ -13,3 +13,5 @@ The website for NAIST robotics laboratory.
 
     # Deploy the updated page at https://naist-robotics.github.io
     git push origin master
+
+<img src=images/deploy.png width=600>  
