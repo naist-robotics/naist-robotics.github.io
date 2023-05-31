@@ -1,0 +1,550 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja-JP">
+<head>
+<title>無人ヘリコプタの遠隔操縦</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-2022-jp">
+<meta name="keywords" content="Vision, Robot, System">
+<meta http-equiv="Content-Style-Type" content="text/css">
+</head>
+
+<body text="#333333" background="background.gif" bgcolor="#FFFFFF" link="#00008B" vlink="#696969" alink="#FF0000">
+
+<div align="center">
+ <table width="100%" border="0" cellspacing="0" cellpadding="2">
+  <tr><td width="100%" bgcolor="#bbbbbb" align="center"> </td></tr>
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font size=5 color="#222222">
+    拡張現実感を用いたビークルの操縦支援<br>
+    無人ヘリコプタの没入型遠隔操縦システムの開発
+   </font>
+   </td>
+  </tr>
+  <tr><td width="100%" bgcolor="#bbbbbb" align="center"></td></tr>
+  <tr>
+   <td width="100%" align="center">
+    <font size=2>
+     奈良先端科学技術大学院大学 ロボティクス講座<br>
+     作成 2004年9月10日<br>
+    </font>
+   </td> 
+  </tr>
+ </table>
+</div>
+
+<div align="center">
+ <table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font color="#222222">はじめに</font>
+   </td>
+  </tr>
+ </table>
+</div>
+
+<div align="left">
+無人ヘリコプタの用途は拡大しており，航空写真の撮影や農薬散布，災害地域の
+偵察などに代表されるように，我々の社会において大いに活躍している．ヘリコ
+プタの特徴として，離着陸のために滑走路の必要が無いことや空中停止ができる
+ことなどが挙げられる．しかし飛行機に比べて機体の姿勢が不安定であり，その
+操縦は非常に困難であるという欠点がある．また無人ヘリコプタの操縦は，飛行
+中に操縦者と機体との相対位置が大きく変化することや，操縦者と機体の距離が
+大きく離れた場合に目視によりその姿勢を把握することが困難になることなどが
+原因で，その操縦は実機のヘリコプタの操縦よりも難しいと言われている．そこ
+でこれらの問題を解決するために，本研究では没入型遠隔操縦システムを提案す
+る．本システムでは，機体にカメラとトランスミッタを搭載して，上空からの映
+像を地上に送信する．地上で機体からの映像を受信し，操縦者はその映像を見な
+がら操縦を行う．このシステムを用いることにより，飛行中においても操縦者と
+機体の視覚的な相対位置が変化することはなくなるため，操縦の難易度は実機と
+同等になると考えられる．また操縦者と機体の距離が離れた場合や，操縦者から
+機体が目視できない状態においても，機体からの映像が受信できていれば飛行を
+継続できるという特長がある．本システムの有効性を確認するために，通常の操
+縦と没入状態での操縦が可能なフライトシミュレータを作成し，容易性の比較を
+行なった．また，本システムの実現性を実機を用いて検証した．
+</div>
+
+<br>
+
+<div align="center">
+ <table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font color="#222222">システム概要</font>
+   </td>
+  </tr>
+ </table>
+</div>
+
+
+<table width=100% border=1>
+ <tr>
+  <th></th>
+  <td align=center>SWIFT-1</td>
+  <td align=center>SWIFT-2(開発中)</td>
+ </tr>
+ <tr>
+  <th>機体</th>
+  <td align=center>HIROBO TURUGI XX</td>
+  <td align=center>JR PROPO VOYAGER GSR</td>
+ </tr>
+ <tr>
+  <th>カメラ</th>
+  <td align=center>アコウル 小型全方位視覚センサ 防水型</td>
+  <td align=center>アコウル 小型全方位視覚センサ 防水型</td>
+ </tr>
+ <tr>
+  <th>映像トランスミッタ</th>
+  <td align=center>RF SYSYEM lab. BS-550GTH</td>
+  <td align=center>無線LAN</td>
+ </tr>
+ <tr>
+  <th>映像レシーバ</th>
+  <td align=center>RF SYSTEM lab. BS-120GR</td>
+  <td align=center>無線LAN</td>
+ </tr>
+ <tr>
+  <th align=center>姿勢安定装置</th>
+  <td align=center>FMA CO-PILOT</td>
+  <td align=center>JR PROPO G550-T</td>
+ </tr>
+ <tr>
+  <th>HMD</th>
+  <td align=center>i-O Display Systems i-glasses LCX2</td>
+  <td align=center>MicroOptical SV-6</td>
+ </tr>
+ <tr>
+  <th>角度センサ</th>
+  <td align=center>Datatec GU-3013</td>
+  <td align=center>Intersense InterTrax2</td>
+ </tr>
+ <tr>
+  <th>GPS</th>
+  <td align=center>なし</td>
+  <td align=center>I・O DATA PCGPS</td>
+ </tr>
+ <tr>
+  <th>搭載PC</th>
+  <td align=center>なし</td>
+  <td align=center>SONY Vaio-U</td>
+ </tr>
+ <tr>
+  <th>写真</th>
+  <td align=center><img src="https://robotics.naist.jp/~kento-ta/images/heli.jpg" alt="Swift-1"></td>
+  <td align=center><img src="https://robotics.naist.jp/~kento-ta/images/heli2.jpg" alt="Swift-2"></td>
+ </tr>
+</table>
+
+<br>
+
+<div align="center">
+ <table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font color="#222222">実験映像</font>
+   </td>
+  </tr>
+ </table>
+</div>
+<div align=center>
+<img src="https://robotics.naist.jp/~kento-ta/images/omni.jpg" alt="全方位カメラ画像">
+<img src="https://robotics.naist.jp/~kento-ta/images/exp.jpg" alt="展開画像">
+<img src="https://robotics.naist.jp/~kento-ta/images/heli_ikoma2002.jpg" alt="被災した建物とヘリコプタ">
+<img src="https://robotics.naist.jp/~kento-ta/images/operator.jpg" alt="HMDを装着した操縦者">
+</div>
+<li>
+<a href="http://robotics.naist.jp/~masana-k/movie/demo_mpeg4.avi">
+研究紹介デモ用(mpeg4)[57.6MB]</a>
+<br>
+
+<li>
+<a href="http://robotics.naist.jp/~masana-k/movie/crest_helicopter.mpg">
+CRESTの発表に使ったムービー(mpeg4)[12.0MB]</a>
+<br>
+
+<li>
+<a href="http://robotics.naist.jp/~masana-k/movie/heijyo.avi">
+平城京跡 大極殿CG(divx)[14MB]</a>
+<br>
+
+<li>
+<a href="http://robotics.naist.jp/~masana-k/movie/sim_immersion.m1v">
+シミュレータ 没入操縦(mpg1)[2.4MB]</a>
+<br>
+
+<li>
+<a href="http://robotics.naist.jp/~masana-k/movie/sim_normal.m1v">
+シミュレータ 通常操縦(mpg1)[2.6MB]</a>
+<br>
+
+<li>
+<a href="http://robotics.naist.jp/movie/2001/koeda.mpg">
+平成13年度生駒市総合防災訓練における画像伝送実験(mpg1)[3.6MB]</a>
+<br>
+
+<li>
+<a href="http://robotics.naist.jp/~masana-k/movie/omniexp.m1v">
+全方位画像のリアルタイム透視投影変換(mpg1)[15MB]</a>
+<br>
+
+
+<div align="center">
+ <table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font color="#222222">文献</font>
+   </td>
+  </tr>
+ </table>
+</div>
+
+<div align="left">
+<h3>
+国際会議(Conference, Workshop, Symposium)
+</h3>
+<li>
+Masanao Koeda, Yoshio Matsumoto, Tsukasa Ogasawara,
+<a href="http://iplab.naist.jp/coe2003/abstracts/Orals/Masanao_Koeda.pdf
+">
+"Performance Evaluation of Annotation-Based Assistance System for Unmanned Helicopter"</a>,
+Proceedings of 2003 NAIST COE International Symposium - Ubiquitous Networked Media Computing -, pp.43-44, Nara, Japan.
+<br>
+
+<li>
+Masanao Koeda, Yoshio Matsumoto, Tsukasa Ogasawara,
+"Development of an Immersive Teleoperating System for Unmanned Helicopter", 
+Proceedings of 11th IEEE Int. Workshop on Robot and Human
+Commnunication, pp.47-52, Berlin, Germany, 2002.
+(ROMAN 2002).
+<br>
+
+<li>
+Masanao Koeda, Yoshio Matsumoto, Tsukasa Ogasawara,
+"Development of an Immersive Teleoperating System for Unmanned Helicopter",
+IAPR Workshop on Machine Vision Applications 2002, pp.220-223.
+<br>
+
+</ul>
+
+<h3>
+国内学会
+</h3>
+<li>
+小枝 正直，松本 吉央，小笠原 司．
+"アノテーションを用いた無人ヘリコプタの操縦支援"，
+第4回 SICEシステムインテグレーション部門 講演会 SI2003, pp. 1064-1065, 2003.12.
+
+<li>
+小枝 正直，松本 吉央, 小笠原 司．
+"無人ヘリコプタの没入型遠隔操縦システムの開発 - シミュレータと実機による有効性の検証 -"，
+ロボティクス・メカトロニクス講演会2002講演論文集．
+
+<li>
+小枝 正直, 松本 吉央, 小笠原 司.
+"無人ヘリコプタの没入型遠隔操縦システムの開発",
+第18回日本ロボット学会学術講演会予稿集, pp.129-130, 2001. 
+
+<h3>
+修士論文
+</h3>
+<li>無人ヘリコプタの没入型遠隔操縦システム．
+<a href="http://robotics.naist.jp/paper/papers/01/Master/Abstruct/koeda.html">(Abstract)</a>
+</div>
+
+<br>
+
+<div align="center">
+ <table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font color="#222222">特許</font>
+   </td>
+  </tr>
+ </table>
+</div>
+<li>
+<a target="_top" href="http://cast.naist.jp/TTO/technology/ogasawar00/ogasawar.html">遠隔操縦システム，特許出願2002-070810，特許公開2003-267295</a><br>
+
+<br>
+
+<div align="center">
+ <table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font color="#222222">お問い合わせ</font>
+   </td>
+  </tr>
+ </table>
+</div>
+
+<ADDRESS><A HREF="mailto:k-sangaku@ad.naist.jp">先端科学技術研究調査センタ k-sangaku@ad.naist.jp</A></ADDRESS>
+<a target="_top" href="http://www.e-technomart.jp/db/technoinfo.asp?act=prod&prodid=342">テクノマート 遠隔操縦システム</a><br>
+
+<br>
+
+<div align="center">
+ <table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font color="#222222">メディアでの紹介</font>
+   </td>
+  </tr>
+ </table>
+</div>
+
+<li>
+<a target="_top"href="http://www.softmagic.ne.jp/softmagic/shoseki/pc/DigitalDreamTools.html">
+書籍「未来型生活アイテム」
+</a>
+に紹介されました
+<br>
+
+<li>
+<a target="_top" href="http://www.zdnet.co.jp/news/0306/04/nj00_w_heri.html">
+ウェアラブルでロボットヘリを操縦すれば――
+</a>(ZDNET News 20030604)
+<br>
+
+<li>
+<a target="_top" href="http://robotics.naist.jp/paper/papers/article/2002/20020831-3.jpg">
+朝日新聞 朝刊(2002.08.31)
+</a><br>
+
+<li>
+<a target="_top" href="http://robotics.naist.jp/paper/papers/article/2002/2002831-1.jpg">
+産経新聞 朝刊(2002.08.31)
+</a><br>
+
+<li>
+<a target="_top" href="http://robotics.naist.jp/paper/papers/article/2002/20020829.jpg">
+奈良新聞 朝刊(2002.08.29 )
+</a><br>
+
+<li>
+<a target="_top" href="http://robotics.naist.jp/paper/papers/article/2002/20020831-2.jpg">
+奈良日日新聞(2002.08.31)
+</a><br>
+
+<li>
+<a target="_top" href="http://robotics.naist.jp/paper/papers/article/2002/20020829-2.jpg">
+奈良日日新聞(2002.08.29)
+</a><br>
+
+<li>
+<a target="_top" href="http://robotics.naist.jp/paper/papers/article/20010829-3.jpg">
+朝日新聞(2001/8/29)</a><br>
+
+<li>
+<a target="_top" href="http://robotics.naist.jp/paper/papers/article/20010829-1.jpg">
+読売新聞(2001/8/29)</a><br>
+
+<li>
+<a target="_top" href="http://robotics.naist.jp/paper/papers/article/20010829-2.jpg">
+奈良新聞(2001/8/29)</a><br>
+
+<li>
+<a target="_top" href="/~masana-k/movie/20010830_NHK.mpg">
+2001年8月30日NHK6時のニュース
+</a>
+
+<br>
+
+<div align="center">
+ <table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font color="#222222">デモの記録</font>
+   </td>
+  </tr>
+ </table>
+</div>
+
+<li>
+<a target="_top" href="/~masana-k/photo/ikoma_bousai_2002/index.html">
+平成14年生駒市防災訓練
+</a>
+<br>
+
+<li>
+<a target="_top" href="/~masana-k/photo/ikoma_bousai_2001/index.html">
+平成13年生駒市防災訓練
+</a>
+
+<!--
+<div align="center">
+ <table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font COLOR="#222222">関連研究</font>
+   </td>
+  </tr>
+ </table>
+</div>
+
+<h3>ヘリ・飛行機関連の研究</h3>
+<li><a target="_top" href="http://www.cs.cmu.edu/afs/cs/project/chopper/www/">
+CMU Autonomous Helicopter Project
+</a><br>
+<li><a target="_top" href="http://www.heli.ethz.ch">
+IMRT Autonomous Helicopter
+</a><br>
+<li><a target="_top" href="http://www-robotics.usc.edu/~avatar/">
+University of Southern California Autonomous Flying Vehicle Project 
+</a><br>
+<li><a target="_top" href="http://gewurtz.mit.edu/research/heli.htm">
+MIT Aerial Robotics
+</a><br>
+<li><a target="_top" href="http://robotics.eecs.berkeley.edu/bear/">
+BEAR - Berkeley Aerobot 
+</a><br>
+<li><a target="_top" href="http://web.mit.edu/whall/www/heli/">
+MIT/Draper Autonomous Helicopter Project 
+</a><br>
+<li><a target="_top" href="http://sun-valley.Stanford.EDU/projects/helicopters/helicopters.html/">
+Stanford University HUMMINGBIRD 
+</a><br>
+<li><a target="_top" href="http://avdil.gtri.gatech.edu/AUVS/IARCLaunchPoint.html">
+Aerial Robotics Competition
+</a><br>
+<li><a target="_top" href="http://www.airaffair.com/hotlist.shtml">
+The Air Affair Aviation Hotlist
+</a><br>
+<li><a target="_top" href="http://www.cc.gatech.edu/ai/robot-lab/prj-uav.html">
+ジョージア工科大学のヘリコプタ 
+</a><br>
+<li><a target="_top" href="http://www.cat.csiro.au/cmit/automation/expertise/heli/">
+CSIRO Manufacturing &Infrastructure Technology
+</a><br>
+<li><a target="_top" href="http://unit.aist.go.jp/is/index_j.html">
+産業技術総合研究所 知能システム研究部門
+</a><br>
+<li><a target="_top" href="http://www.fz.dis.titech.ac.jp/~nakamura/kenkyu.html">
+東京工業大学 菅野研究室
+</a><br>
+<li><a target="_top" href="http://mec2.tm.chiba-u.jp/~dfj/main/">
+千葉大学 完全自律小型無人ヘリコプタ研究グループ
+</a><br>
+<li><a target="_top" href="http://vib.kuaero.kyoto-u.ac.jp/index.html">
+京都大学 航空宇宙工学専攻 振動制御工学研究室
+</a><br>
+<li><a target="_top" href="http://www.secom.co.jp/isl/Research/RB/Project/previous/rb_previous.html">
+セコムIS研究所
+</a><br>
+<li><a target="_top" href="http://www.sys.wakayama-u.ac.jp/~s012019/">
+Flight Feather
+</a><br>
+
+<h3>遠隔操縦，遠隔操作，テレオペレーション，テレロボティクス，テレイグジスタンス，テレプレゼンス関連の研究</h3>
+<li><a target="_top" href="http://www.star.t.u-tokyo.ac.jp/">
+東京大学 舘研究室
+</a><br>
+<li><a target="_top" href="http://www.is.aist.go.jp/humanoid/index_j.htm">
+産総研 ヒューマノイド研究グループ
+</a><br>
+<li><a target="_top" href="http://yokoya.naist.jp/index-j.html">
+奈良先端大 横矢研究室
+</a><br>
+<li><a target="_top" href="http://www.space.mech.tohoku.ac.jp/">
+東北大学 内山研究室
+</a><br>
+<li><a target="_top" href="http://www.fujita.co.jp/topic/enkakurobo.html">
+株式会社フジタ
+</a><br>
+<li><a target="_top" href="http://www.spawar.navy.mil/robots/index.html">
+ROBOTICS at Space and Naval Warfare Systems Center, San Diego
+</a><br>
+<li><a target="_top" href="http://www.caip.rutgers.edu/vrlab/index.html">
+CAIP(Center for Advanced Information Processing) Human-Machine Interface Lab.
+</a><br>
+
+<h3>AR関連の研究</h3>
+<li><a target="_top" href="http://www1.cs.columbia.edu/graphics/">
+Columbia University Computer Graphics and User Interfases Lab.
+</a><br>
+<li><a target="_top" href="http://www.se.rit.edu/~jrv/research/ar/">
+Augmented Reality Page
+</a><br>
+
+<div align="center">
+ <table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font color="#222222">その他のリンク</font>
+   </td>
+  </tr>
+ </table>
+</div>
+
+<h3>パーツメーカー等</h3>
+<li><a target="_top" href="http://www.hobbynet-jp.com/IM/">
+アイエム産業 </a><br>
+<li><a target="_top" href="http://www.futaba.co.jp/japanese/index.htm">
+双葉電子工業
+</a><br>
+<li><a target="_top" href="http://www02.so-net.ne.jp/~k-s/kands/index.html">
+K&S ホームページ </a><br>
+<li><a target="_top" href="http://www.jrpropo.co.jp/home.html">
+JR PROPO</a><br>
+<li><a target="_top" href="http://www.os-engines.co.jp/">
+O.S. Engine </a><br>
+<li><a target="_top" href="http://model.hirobo.co.jp/">
+ヒロボー </a><br>
+<li><a target="_top" href="http://www14.big.or.jp/~pion/">
+パイオニア モデルクラフト</a><br>
+<li><a target="_top" href="http://www.hobbynet-jp.com/">
+HOBBYNET(部品通販)</a><br>
+
+
+<h3>無人ヘリコプタメーカ</h3>
+<li><a target="_top" href="http://www.yamaha-motor.co.jp/sky/">
+ヤマハ産業用無人ヘリコプターRMAX／R-50
+</a><br>
+<li><a target="_top"
+href="http://www.yanmar.co.jp/aboutus/whats-new/news-release/9701/conts2.htm">
+ヤンマー農機(株) 産業用無人ヘリコプター "YH300"
+</a><br>
+<li><a target="_top" href="http://www.kawada.co.jp/ams/robocopter/index.html">
+川田工業株式会社 ロボコプタ300
+</a><br>
+<li><a target="_top" href="http://www.fhi.co.jp/section/aerospace/aero_001.html">
+富士重工業株式会社 高性能無人ヘリコプター「ＲＰＨ２」
+</a><br>
+<li><a target="_top" href="http://www.infosnow.ne.jp/~terucco/newpage11.htm">
+HONDAの無人ヘリコプタ?
+</a><br>
+
+<h3>その他</h3>
+<li><a target="_top" href="http://www5.ocn.ne.jp/~jumbo/">
+ホビーショップ ジャンボ
+</a>
+<br>
+<br>
+<li><a target="_top" href="http://www.mip.informatik.uni-kiel.de/~evers/middle.html">
+itrax Linux用ドライバ
+</a><br>
+<li><a target="_top" href="http://www.ghz-link.com/">
+RF SYSTEM lab.
+</a><br>
+<li><a target="_top" href="http://www.rcimpact.com/shopping/joypro2/">
+インパクトシステム JOYPRO-2(ラジコン送信機用のジョイスティック・コンバー
+タ)
+</a>
+<div align="left">
+ <table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font color="#222222">連絡先</font>
+   </td>
+  </tr>
+ </table>
+</div>
+<div align="left">
+<a href="http://robotics.naist.jp">研究室トップへ戻る</a>
+</div>
+
+<div align="right">
+ <a href="http://validator.w3.org/check/referer"><img border="0" src="valid-html401.gif" alt="Valid HTML 4.01!" height="31" width="88"></a>
+</div>
+
+
+</body>
+</html>

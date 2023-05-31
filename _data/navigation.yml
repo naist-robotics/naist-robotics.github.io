@@ -1,0 +1,47 @@
+- title: HOME
+  url: "/"
+  side: left
+
+- title: "研究"
+  url: "/Research/"
+  side: left
+  dropdown:
+  - title: "研究設備"
+    url: "/Research/equipment/"
+  - title: "研究紹介"
+    url: "/Research/topics/"
+  - title: "業績リスト"
+    url: "/Research/publications/"
+  - title: "マスメディア報道"
+    url: "/Research/press/"
+
+- title: "メンバー"
+  url: "/AboutUs/member/"
+  side: left
+
+- title: "学生募集"
+  url: "/Miscellaneous/admission/"
+  side: left
+
+- title: "イベント"
+  url: "/Miscellaneous/events/"
+  side: left
+
+- title: "問い合わせ"
+  url: "/AboutUs/contact/"
+  side: left
+
+- title: "アクセス"
+  url: "/AboutUs/access/"
+  side: left
+
+- title: "リンク集"
+  url: "/Miscellaneous/links/"
+  side: left
+
+
+
+
+- title: "English"
+  url: "/home_en/"
+  side: right

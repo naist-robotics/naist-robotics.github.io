@@ -1,0 +1,303 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja-JP">
+<head>
+<title>HRP-2 with interaction ability</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-2022-jp">
+<meta name="keywords" content="Vision, Robot, System">
+<meta http-equiv="Content-Style-Type" content="text/css">
+</head>
+
+<body text="#333333" background="background.gif" bgcolor="#FFFFFF" link="#00008B" vlink="#696969" alink="#FF0000">
+
+<div align="center">
+ <table width="100%" border="0" cellspacing="0" cellpadding="2">
+  <tr><td width="100%" bgcolor="#bbbbbb" align="center"> </td></tr>
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font size=5 color="#222222">人とインタラクション可能なヒューマノイドロボットHRP-2</font>
+   </td>
+  </tr>
+  <tr><td width="100%" bgcolor="#bbbbbb" align="center"></td></tr>
+  <tr>
+   <td width="100%" align="center">
+    <font size=2>
+     奈良先端科学技術大学院大学 情報科学研究科 ロボティクス講座・音情報処理学講座<br>
+     和歌山大学 システム工学部 デザイン情報学科 聴覚メディア研究室<br>
+     作成 2005年08月11日<br>
+     更新 2005年08月11日
+    </font>
+   </td> 
+  </tr>
+ </table>
+</div>
+
+<div align="center">
+ <table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font color="#222222">研究の目的</font>
+   </td>
+  </tr>
+ </table>
+</div>
+
+<div align="left">
+ これまでのヒューマノイドロボットの研究では，歩行をはじめとした「動作生成」に重点がおかれていた．しかし，今後ヒューマノイドがオフィスや一般家庭へ普及していくためには，音声やジェスチャを用いて自然に人とインタラクション（対話）する機能が欠かせない．そこで，本研究では我々がこれまでに開発してきた「受付案内ロボットASKA」の対話機能を発展させ，HRP-2上に実装することで，「人とインタラクション可能なヒューマノイドロボット」を実現することを目的とする．<br>
+</div>
+<div align="center">
+  <img src="https://robotics.naist.jp/~kento-ta/images/image.jpg" alt="ヒューマノイドと人の対話イメージ">
+</div>
+
+<div align="center">
+ <table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font color="#222222">ロボットのハードウェア</font>
+   </td>
+  </tr>
+ </table>
+</div>
+
+<div align="center">
+ <table border=1>
+ <tbody>
+  <tr>
+   <td width="500" align="center">
+    <img src="https://robotics.naist.jp/~kento-ta/images/system_hrp2.jpg" alt="ヒューマノイドロボットHRP-2">
+    </td>
+   <td>
+    <b>ヒューマノイドロボットHRP-2</b><br>
+<a href="http://www.kawada.co.jp/ams/promet/">HRP-2</a>は，経済産業省が1998年から5ヵ年計画で実施した「人間協調・共存型ロボットシステムの研究開発」（HRP：Humanoid Robotics Project）の中で川田工業，産業技術総合研究所らが共同開発したヒューマノイドロボットである．主な特徴は，
+ <ul style="margin-top:2pt; margin-bottom:2pt;">
+  <li>身長154cm，体重58kg，腰２軸を含む３０自由度と，軽量多自由度を実現
+  <li>股関節が片持ち構造で隘路歩行可能
+  <li>高密度電装系実装によるバックパックのない外観
+  <li>不整地歩行，転倒制御，転倒回復動作の実現を計画
+  <li>オープンアーキテクチャで，ユーザによるソフトウェア開発が可能
+ </ul>
+となっている．
+   </td>
+  </tr>
+  <tr>
+   <td width="500" align="center">
+    <img src="https://robotics.naist.jp/~kento-ta/images/system_camera.jpg" alt="カメラシステム">
+    <img src="https://robotics.naist.jp/~kento-ta/images/system_mic.jpg" alt="８チャンネルマイク">
+    </td>
+   <td>
+    <b>4眼カメラシステム</b><br>
+    小型IEEE1394カメラのFLEA(PointGray社)を合計4台，頭部に内蔵した．望遠（人の顔を見るため）と広角（指さし等のジェスチャを見るため）の2組のレンズを取り付け，それぞれでステレオ視ができるようにした．<br><br>
+    <b>8チャンネルマイク</b><br>
+    頭部カバーに8チャンネルのマイクロフォンアレイを組み込み，また音声信号の取り込みのために8チャンネル音声入力ボード<a href="http://www.inrevium.jp/board/8csusb.html">TD-BD-8CSUSB</a>(東京エレクトロンデバイス社)を頭部に組み込んだ．さらに，これまではサポートされていなかった16kHzサンプリングが可能なLinux用デバイスドライバを開発した．
+   </td>
+  </tr>
+  <tr>
+   <td align="center">
+    <img src="https://robotics.naist.jp/~kento-ta/images/system_chair.jpg" alt="専用いす">
+    <img src="https://robotics.naist.jp/~kento-ta/images/system_pen.jpg" alt="ペンホルダ">
+    </td>
+   <td>
+    <b>専用いす</b><br>
+ テーブルの前に座った状態でのデモを行うため，専用の椅子と足置きを作成した．座らせた状態では，安定させるためHRP-2本体は椅子に，また足は足置きにそれぞれボルトで固定する必要があるので，歩行のデモを同時に行うことはできなくなる．
+ <br><br>
+    <b>ペンホルダ</b><br>
+ ペンで絵を描くデモを行うため，ホワイトボードマーカをHRP-2の手に取り付けるためのペンホルダを作成した．ロボットの手先位置制御における多少の位置誤差を吸収するため，ペンホルダにはバネが内蔵されている．
+   </td>
+  </tr>
+ </table>
+</div>
+
+<div align="center">
+ <table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font color="#222222">ロボットのソフトウェア</font>
+   </td>
+  </tr>
+ </table>
+</div>
+
+<div align="center">
+ <table border=1>
+ <tbody>
+  <tr>
+   <td width="500" align="center">
+    <img src="https://robotics.naist.jp/~kento-ta/images/speech.jpg" alt="音声認識機能"><br>
+    頭を叩かれたことを音で認識している様子
+   </td>
+   <td>
+    <b>音声認識機能</b>
+    <ul style="margin-top:2pt; margin-bottom:2pt;">
+     <li>大語彙連続音声認識ソフト Juliusを利用し，語彙数は約2万語
+     <li>挨拶，施設の案内，時刻・天気情報の提供などが可能
+     <li>ハンドマイクなしで，1m程度離れたところから話しかけても認識可能
+     <li>子供・大人の声を判別
+     <li>咳・くしゃみ，頭をたたかれた，などの非定常雑音を識別
+    </ul>
+   </td>
+  </tr>
+  <tr>
+   <td align="center">
+    <img src="https://robotics.naist.jp/~kento-ta/images/vision.jpg" alt="画像認識機能"><br>
+    （左から）視線の認識，指さし方向の認識，顔の切り出しの様子
+   </td>
+   <td>
+    <b>画像認識機能</b>
+    <ul style="margin-top:2pt; margin-bottom:2pt;">
+     <li>人の顔の動き，視線の動き，表情，指さし動作などを認識
+     <li>人とアイコンタクトしながら対話ができる
+     <li>音声認識だけでは分からない「それ」などの言葉が指すものを認識
+     <li>背景から顔を抜き出して似顔絵を描くことができる
+    </ul>
+   </td>
+  </tr>
+<!--  <tr>
+   <td align="center">
+    <img src="motion.jpg" alt="動作生成機能"><br>
+    動作を生成している様子
+   </td>
+   <td>
+    図中右側は推定した自己位置を表している．中央下の四角が車いすの位置を，またその周囲の緑色の部分はレーザ距離センサでスキャンした壁などの点を表している．車いすを囲む赤い円は，障害物検出の結果，進める方向を示している．この場合では，どこにも衝突するものがない場合は真円になるが，壁の近くだと進めない方向（右図の場合は左側）が欠けて表示されている．
+   </td>
+  </tr>
+-->
+ </table>
+</div>
+
+<div align="center">
+ <table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font color="#222222">愛知万博での実証実験</font>
+   </td>
+  </tr>
+ </table>
+</div>
+
+<div align="center">
+ <table border=1>
+ <tbody>
+  <tr>
+   <td width="500" align="center">
+    <img src="https://robotics.naist.jp/~kento-ta/images/kaijou1.jpg" alt="会場全景"><br>
+   </td>
+   <td>
+<b>会場外観</b><br>
+    愛知万博の「キッコロモリゾーメッセ」を会場としたプロトタイプロボット展（2005年6月9日〜19日）において11日間，デモを行った．このイベントには毎日1万人以上，合計で十数万人の来場者があり，混雑時には1時間以上の待ち行列ができるなど大盛況であった．
+   </td>
+  </tr>
+  <tr>
+   <td align="center">
+    <img src="https://robotics.naist.jp/~kento-ta/images/kaijou2.jpg" alt="ステージデモの様子"><br>
+   </td>
+   <td>
+<b>ステージデモ</b><br>
+我々のHRP-2は，ステージにてMCつきの約10分間のデモを毎日2回行った．会場では
+その他のブースでもMCつきデモが同時に行われており騒音がひどいため，ハンドマイ
+クを用いてデモを行った．ステージ前に集まった子供からお年寄りまで多数のお客さん
+に見守られながら，デモは（2回を除き）成功裏に終わった．
+   </td>
+  </tr>
+  <tr>
+   <td align="center">
+    <img src="https://robotics.naist.jp/~kento-ta/images/demo.jpg" alt="デモの様子"><br>
+   </td>
+   <td>
+<b>デモ内容</b><br>
+MCによるロボットと出演者の紹介のあと，出演者はまずお客さんに向かって「こんにちは」と
+挨拶．続いてロボットに向かって挨拶すると，ロボットは自分が話しかけられたことを
+認識して返答する．また，出演者が咳をすると「咳してますね，風邪ですか？」と反
+応する．次に「その新聞取って」とテーブル上に2つある新聞のうちの1つを指すと，そ
+れを取って渡してくれる．「似顔絵を描いて」と頼むと，似顔絵デモの開始．「こっち
+を見て下さい」と言われてロボットの方を向くと，ロボットは顔を認識して絵を描き始
+める．書きながらもロボットと出演者は会話を続ける．3分程度で似顔絵を描き上げた
+ら，出演者がお客さんに絵を披露してデモは終了．
+   </td>
+  </tr>
+ </table>
+</div>
+
+<div align="center">
+ <table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font color="#222222">ビデオ</font>
+   </td>
+  </tr>
+ </table>
+</div>
+
+
+<div align="center">
+ <table border=2>
+ <tbody>
+  <tr>
+   <td align="center"><a href="indoor.mpg">万博デモ</a><br>(MPEG1, 9分27秒, 76.5MB)</td>
+  </tr>
+  <tr>
+   <td><a href="expo_demo_hrp2_small.mpg"><img src="https://robotics.naist.jp/~kento-ta/images/expo_demo_hrp2_small.jpg" alt="万博デモ"></a></td>
+  </tr>
+ </table>
+</div>
+
+<div align="center">
+ <table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font COLOR="#222222">文献リスト</font>
+   </td>
+  </tr>
+ </table>
+</div>
+
+<div align="left">
+ <ol style="margin-top:2pt; margin-bottom:2pt;">
+  <li>怡土順一，佐々尾 直樹，近藤 理，末永 剛，松本 吉央，小笠原 司: "HRP-2によるマルチモーダルインタラクション", 第23回日本ロボット学会学術講演会予稿集, 2005.
+  <li>佐々尾 直樹，近藤 理，末永 剛，怡土 順一，松本 吉央，小笠原 司: "HRP-2による似顔絵描きの実現", 第23回日本ロボット学会学術講演会予稿集, 2005.
+ </ol>
+</div>
+
+<div align="center">
+ <table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font color="#222222">開発メンバー</font>
+   </td>
+  </tr>
+ </table>
+</div>
+
+<div align="left">
+ <ul style="margin-top:2pt; margin-bottom:2pt;">
+  <li>怡土順一，末永剛，近藤理，佐々尾直樹，豊田将隆，高松渉，松本吉央（奈良先端大・情報科学研究科・ロボティクス講座）
+  <li>西村竜一（和歌山大学・システム工学部・聴覚メディア研究室）
+ </ul>
+</div>
+
+<div align="left">
+ <table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font color="#222222">連絡先</font>
+   </td>
+  </tr>
+ </table>
+</div>
+
+<div align="left">
+松本吉央 (<img src="mail_address.gif" alt="mail address">)<br>
+<br>
+<a href="http://robotics.naist.jp">研究室トップへ戻る</a>
+</div>
+
+<div align="right">
+ <a href="http://validator.w3.org/check/referer"><img border="0" src="https://robotics.naist.jp/~kento-ta/images/valid-html401.gif" alt="Valid HTML 4.01!" height="31" width="88"></a>
+</div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-414006-1";
+urchinTracker();
+</script>
+</body>
+</html>

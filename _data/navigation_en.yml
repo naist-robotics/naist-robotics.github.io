@@ -1,0 +1,48 @@
+- title: HOME
+  url: "/home_en/"
+  side: left
+
+- title: "Research"
+  url: "/Research/Research_en/"
+  side: left
+  dropdown:
+  - title: "Equipment"
+    url: "/Research/equipment_en/"
+  - title: "Topics"
+    url: "/Research/topics_en/"
+  - title: "Publications"
+    url: "/Research/publications_en/"
+  - title: "Press"
+    url: "/Research/press_en/"
+
+- title: "Member"
+  url: "/AboutUs/member_en/"
+  side: left
+
+- title: "Admission"
+  url: "/Miscellaneous/admission_en/"
+  side: left
+
+- title: "Events"
+  url: "/Miscellaneous/events_en/"
+  side: left
+
+- title: "Contact"
+  url: "/AboutUs/contact_en/"
+  side: left
+
+- title: "Access"
+  url: "/AboutUs/access_en/"
+  side: left
+
+- title: "Links"
+  url: "/Miscellaneous/links_en/"
+  side: left
+
+
+
+
+
+- title: "japanese"
+  url: "/"
+  side: right

@@ -1,0 +1,21 @@
+---
+layout: default
+format: member
+---
+
+
+
+<div class="row t30">
+	<div class="medium-12 columns">
+		<article>
+			<header>
+				{% if page.subheadline %}<p class="subheadline">{{ page.subheadline }}</p>{% endif %}
+				<h1>{{ page.title }}</h1>
+			</header>
+
+			
+
+			{{ content }}
+		</article>
+	</div><!-- /.medium-12.columns -->
+</div><!-- /.row -->

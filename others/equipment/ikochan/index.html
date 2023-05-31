@@ -1,0 +1,287 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja-JP">
+<head>
+<title>Guide Robot Ikochan</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-2022-jp">
+<meta name="keywords" content="Vision, Robot, System">
+<meta http-equiv="Content-Style-Type" content="text/css">
+</head>
+
+<body text="#333333" background="background.gif" bgcolor="#FFFFFF" link="#00008B" vlink="#696969" alink="#FF0000">
+
+<div align="center">
+ <table width="100%" border="0" cellspacing="0" cellpadding="2">
+  <tr><td width="100%" bgcolor="#bbbbbb" align="center"> </td></tr>
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font size=5 color="#222222">駅構内案内ロボット イコちゃん</font>
+   </td>
+  </tr>
+  <tr><td width="100%" bgcolor="#bbbbbb" align="center"></td></tr>
+  <tr>
+   <td width="100%" align="center">
+    <font size=2>
+     奈良先端科学技術大学院大学 情報科学研究科<br>
+     作成 2006年03月27日<br>
+     更新 2006年03月27日
+    </font>
+   </td> 
+  </tr>
+ </table>
+</div>
+
+<div align="center">
+ <table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font color="#222222">研究の目的</font>
+   </td>
+  </tr>
+ </table>
+</div>
+
+<div align="left">
+2006年3月27日に開業した学研北生駒駅において，構内施設の案内を行うロボッ
+トを開発した．駅という人の出入りが激しく，変動の多い環境の中で，正確な
+案内動作を実現することを目標としている．<br>
+
+
+</div>
+
+<div align="center">
+ <table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font color="#222222">実験システム</font>
+   </td>
+  </tr>
+ </table>
+</div>
+
+<div align="center">
+ <table border=1>
+ <tbody>
+  <tr>
+   <td width="500" align="center">
+    イコちゃん外観<br>
+    <img src="https://robotics.naist.jp/~kento-ta/images/iko_front.jpg" alt="iko front">
+<!--    <img src="iko_using.jpg" alt="iko face"> -->
+   </td>
+   <td>
+    イコちゃんは
+    <ul style="margin-top:2pt; margin-bottom:2pt;">
+     <li>電動車椅子:今仙技研EMC-230
+    </ul>
+    をベースに，搭載された二つのPC
+    <ul style="margin-top:2pt; margin-bottom:2pt;">
+     <li>制御用PC (デスクトップ:PentiumM 1.73GHz)
+     <li>IF用PC   (デスクトップ:PentiumM 2.13GHz)
+    </ul>
+    によりシステム構成されている.
+   </td>
+  </tr>
+  <tr>
+   <td width="500" align="center">
+    インタフェース機能<br>
+    <img src="https://robotics.naist.jp/~kento-ta/images/iko_eye.jpg" alt="station map">
+    <img src="https://robotics.naist.jp/~kento-ta/images/iko_ekimap.jpg" alt="station map">
+   </td>
+   <td>   
+搭載されたカメラより本体前方の画像を取得し,前方に人の顔が存在するかど
+ うかを画像処理により判別する.発見に成功した場合,ディスプレイに表示し
+ た目で顔の動きを追跡する.
+利用者は搭載されたタッチパネルに触れてメニュー操作をすることで,駅構内
+ 案内機・娯楽機能を利用出来る.
+   </td>
+  </tr>
+  <tr>
+   <td width="500" align="center">
+    自律移動機能<br>
+    <img src="https://robotics.naist.jp/~kento-ta/images/LMS200.jpg" alt="LMS200">
+    <img src="https://robotics.naist.jp/~kento-ta/images/iko_map.jpg" alt="localize">    
+   </td>
+   <td>
+    イコちゃんの足下にはレーザ距離センサ(SICK社 LMS200)が搭載されており，あらかじめ作成された地図とのマッチングにより自己位置を認識し，また周囲の人などの障害物を検出・回避することができる．左図の地図は，自己位置の推定結果である．地図中心の四角がロボットの位置であり，青い部分はレーザ距離センサで検出した壁，柱，人などを表している．地図情報（線で表現されている）とセンサで検出した点群のマッチングを行うことで，誤差2cm程度の精度でロボットの自己位置を推定することができる．
+   </td>
+  </tr>
+<!--  <tr>
+   <td width="500" align="center">
+    遠隔監視・操縦機能<br>
+    <img src="takemaru_remote.jpg" alt="takemaru remote">
+   </td>
+   <td>
+    たけまるには，遠隔監視・操縦のためのプログラムも組み込まれており，大学から北コミュニティセンターの様子を観察したり，遠隔操作を行うことが可能である．この機能を用いるときには全方位カメラたけまる上部に取り付ける．
+   </td>
+  </tr>  -->
+ </table>
+</div>
+<!--
+<div align="center">
+ <table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font color="#222222">駅での様子</font>
+   </td>
+  </tr>
+ </table>
+</div>
+
+<div align="center">
+ <img src="ISTA.jpg" alt="Ikoma kita community center ISTA">
+ <img src="takemaru_saito.jpg" alt="takemaru with Saito">
+ <img src="takemaru_with_kids.jpg" alt="takemaru with kids">
+ <img src="takemaru_with_girl.jpg" alt="takemaru with a girl">
+</div>
+-->
+<!--
+<div align="center">
+ <table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font color="#222222">実験ビデオ</font>
+   </td>
+  </tr>
+ </table>
+</div>
+
+<div align="center">
+ <table border=2>
+ <tbody>
+  <tr>
+   <td><a href="indoor.mpg">屋内走行実験</a><br>(MPEG1, 7.8MB)</td>
+   </tr>
+  <tr>
+   <td><a href="../../MOVIE/wchair/indoor.mpg"><img src="indoor.jpg" alt="indoor"></a></td>
+   </tr>
+ </table>
+</div>
+-->
+
+<div align="center">
+ <table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font color="#222222">メディアでの紹介</font>
+   </td>
+  </tr>
+ </table>
+</div>
+
+<div align="left">
+ <ul>
+  <li>2006.03.27 NHK奈良放送局「ニュースなら610」<br>
+      <a>ゆめかがやくIN KITAIKOMA 先端的なイメージの駅をめざし</a>
+  <li>2004.04.08 讀賣新聞 朝刊<br>
+      <a>一日署長ロボ交通安全訴え　一日署長として交通安全をアピールするイコちゃん</a>
+ </ul>
+</div>
+
+<div align="center">
+ <table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font color="#222222">デモの記録</font>
+   </td>
+  </tr>
+ </table>
+</div>
+
+<div align="left">
+ <ul style="margin-top:2pt; margin-bottom:2pt;">
+  <li>学研北生駒駅でけいはんな線開業式典と「ゆめかがやく IN KITAIKOMA」　 （2006.03.27）
+  <li>東光小学校での光台夏祭り （2006.08.19）
+ </ul>
+ <center>
+  <img src="https://robotics.naist.jp/~kento-ta/images/iko_open.jpg" alt="iko opening ceremony">
+  <img src="https://robotics.naist.jp/~kento-ta/images/iko_open2.jpg" alt="iko opening ceremony2">
+  <img src="https://robotics.naist.jp/~kento-ta/images/iko_heart.jpg" alt="iko TV">
+ </center>
+</div>
+
+<div align="center">
+ <table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font COLOR="#222222">文献リスト</font>
+   </td>
+  </tr>
+ </table>
+</div>
+
+<div align="left">
+ <ol style="margin-top:2pt; margin-bottom:2pt;">
+  <li>杉江 京，上野原 雅史，河合 紀彦，末永 剛，松本 吉央，小笠原 司：
+ "駅構内ロボット「イコちゃん」の開発"，第２４回日本ロボット学会学術講
+ 演会予稿集C，3I21, 2006.9.14-16.
+ </ol>
+</div>
+
+
+<div align="center">
+ <table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font COLOR="#222222">関連研究</font>
+   </td>
+  </tr>
+ </table>
+</div>
+
+<div align="left">
+ <ul style="margin-top:2pt; margin-bottom:2pt;">
+  <li>斎藤 裕昭, 池山 智之, 足立 佳久, 松本 吉央, 小笠原 司: "館内案内
+ ロボット「たけまる」の開発", 日本機会学会ロボティクス・メカトロニクス
+ 講演会'03講演論文集, 2003.
+  <li>Yoshihisa Adachi, Hiroaki Saito, Yoshio Matsumoto, Tsukasa
+ Ogasawara: "Memory-Based Navigation using Data Sequence of Laser
+ Range Finder", Proceedings of 10th IEEE Int. Workshop on Symposium on
+ Computational Intelligence in Robotics and Automation (CIRA 2003), 2003.
+ </ul>
+</div>
+
+<div align="center">
+ <table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font color="#222222">研究メンバー</font>
+   </td>
+  </tr>
+ </table>
+</div>
+
+<div align="left">
+ <ul style="margin-top:2pt; margin-bottom:2pt;">
+  <li>杉江　京　　　：本講座
+  <li>上野原　雅史：システム制御・管理講座
+  <li>河合　紀彦　 ：視覚情報メディア講座  
+ </ul>
+</div>
+
+<div align="left">
+ <table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font color="#222222">連絡先</font>
+   </td>
+  </tr>
+ </table>
+</div>
+
+<div align="left">
+松本吉央 (<img src="https://robotics.naist.jp/~kento-ta/images/mail_address.gif" alt="mail address">)<br>
+<br>
+<a href="http://robotics.naist.jp">研究室トップへ戻る</a>
+</div>
+
+<div align="right">
+ <a href="http://validator.w3.org/check/referer"><img border="0" src="https://robotics.naist.jp/~kento-ta/images/valid-html401.gif" alt="Valid HTML 4.01!" height="31" width="88"></a>
+</div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-414006-1";
+urchinTracker();
+</script>
+</body>
+</html>

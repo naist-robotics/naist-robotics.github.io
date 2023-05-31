@@ -1,0 +1,434 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja-JP">
+<head>
+  <title>humanoid robot HRP-2</title>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-2022-jp">
+  <meta name="keywords" content="Vision, Robot, System">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+</head>
+<body text="#333333" background="background.gif"
+ bgcolor="#ffffff" link="#00008b" vlink="#696969" alink="#ff0000">
+<div align="center">
+<table width="100%" border="0" cellspacing="0" cellpadding="2">
+  <tbody>
+
+    <tr>
+      <td width="100%" bgcolor="#bbbbbb" align="center"> <br>
+      </td>
+    </tr>
+    <tr>
+      <td width="100%" bgcolor="#bbbbbb" align="center"> <font size="5"
+ color="#222222">ヒューマノイドロボットHRP-2</font> </td>
+    </tr>
+
+    <tr>
+      <td width="100%" bgcolor="#bbbbbb" align="center"><br>
+      </td>
+    </tr>
+    <tr>
+      <td width="100%" align="center"> <font size="2"> 奈良先端科学技術大学院大学
+ロボティクス講座<br>
+作成 2003年12月16日<br>
+
+更新 2004年4月11日 </font> </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<div align="center">
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tbody>
+    <tr>
+      <td width="100%" bgcolor="#bbbbbb" align="center"> <font
+ color="#222222">研究の目的</font> </td>
+
+    </tr>
+  </tbody>
+</table>
+</div>
+<div align="left">
+近年、ヒューマノイドによる二足歩行が実現されているが、歩行時の問題点として鉛直軸モーメントの発生が挙げられる。これらは<BR>
+ <ul style="margin-top:2pt; margin-bottom:2pt;">
+  <li>高速歩行時、体の回転による足裏でのすべり
+  <li>路面状態によるすべり
+ </ul>
+を引き起こす。<BR>
+また、上体や腕の振りを用いたモーメント補償制御が取り上げられているが、<BR>
+ <ul style="margin-top:2pt; margin-bottom:2pt;">
+  <li>腕の自由が制限される
+  <li>歩行時の作業が制限される
+ </ul>
+といった問題点もある。<BR>
+そこで、人間の歩行動作を参考にし、腰部を逆回転させることによりモーメントを発生させ、
+腕を含めた上半身を用いないでモーメント補償する事を考えた。<BR>
+
+</div>
+<div align="center">
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tbody>
+    <tr>
+
+      <td width="100%" bgcolor="#bbbbbb" align="center"> <font
+ color="#222222">アプローチ</font> </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<div align="left">
+ここで参考にする歩行として近年話題となっており、さまざまな利点があるとされる『常歩歩行』という特殊歩行の特徴を利用し，ロボットに応用することを試みた。<BR>
+人間の歩行の解析にはviconモーションキャプチャシステムを用い、人間の歩行時における各関節角の動きと身体の揺動を調べ、それらを解析し、適切な歩行パターンを生成し、シミュレーションを行なう。<br>シミュレーションで得られた知見をもとに実ロボットへ実装する。<br>
+</div>
+<div align="center">
+
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tbody>
+    <tr>
+      <td width="100%" bgcolor="#bbbbbb" align="center"> <font
+ color="#222222">実験システム</font> </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<div align="center">
+
+<table border="1">
+  <tbody>
+    <tr>
+      <td width="500" align="center">ヒューマノイドロボットHRP-2<br>
+      <img src="https://robotics.naist.jp/~kento-ta/images/hrp2.jpg" title="" alt="hrp2"
+ style="width: 227px; height: 384px;"> 
+      <img src="https://robotics.naist.jp/~kento-ta/images/yaw.jpg" title="" alt="hrp2"
+style="width: 112px; height: 177px;"></td>
+      <td><b>HRP-2</b>は、経済産業省が1998年から5ヵ年計画で実施中の「人間協調・共存型ロボットシステムの研究開発」により開発された人間型ロボットの最終成果機。
+      <ul>
+        <li>身長154cm、体重58kg、腰2軸を含む30自由度を実現。</li>
+
+        <li>バッテリを含み体重58kgの大幅軽量化に成功。 </li>
+        <li>自由度の高い股関節構造（片持ち構造）で狭い通路も歩行可能。</li>
+        <li>高密度電装系の実現でスマートな外観（バックパックなし）。</li>
+        <li>凸凹道の歩行や転倒回復動作の実現を目指す。</li>
+        <li>オープンアーキテクチャで、ユーザーによるソフトウェア開発が可能</li>
+        <li>腰に水平軸周り(Yaw軸)を持つ</li>
+      </ul>
+
+      </td>
+    </tr>
+    <tr>
+      <td align="center">モーションキャプチャシステム Vicon<br>
+      <img src="https://robotics.naist.jp/~kento-ta/images/vicon.jpg" title="" alt="vicon"
+ style="width: 396px; height: 289px;"><br>
+      </td>
+      <td> 合計12個のカメラと、測定対象に張り付けられたマーカーにより、対象の動きをキャプチャできるシステム。<br>
+
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+
+
+<div align="center">
+
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tbody>
+    <tr>
+      <td width="100%" bgcolor="#bbbbbb" align="center"> <font
+ color="#222222">常歩(なみあし)の特徴</font> </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<div align="center">
+
+<table border="1">
+  <tbody>
+    <tr>
+      <td width="500" align="center">常歩・通常歩行における鉛直軸周りの腰向き遷移<br>被験者Ａ，Ｂ<BR>
+
+      <img src="https://robotics.naist.jp/~kento-ta/images/namiashi1.jpg" style="width: 344px; height: 188px;"> </td>
+      <td>左図はyaw軸周りの腰の回旋角度を示している．<BR>
+特徴として、
+      <ul>
+        <li>腰回旋の振幅が小さくなっている</li>
+      </ul>
+      </td>
+    </tr>
+
+    <tr>
+      <td width="500" align="center">常歩・通常歩行における鉛直軸周りの腰向き遷移<br>被験者Ｃ<BR>
+
+      <img src="https://robotics.naist.jp/~kento-ta/images/namiashi2.jpg" style="width: 338px; height: 302px;"> </td>
+      <td>図の青が通常，赤が常歩で，矢印区間が右脚の遊脚期<BR>
+      特徴として、
+      <ul>
+        <li>腰回旋が逆位相</li>
+
+      </ul>
+      </td>
+    </tr>
+
+   <tr>
+      <td width="500" align="center">まとめ<BR>
+      <img src="https://robotics.naist.jp/~kento-ta/images/namiashi3.jpg" > </td>
+      <td>図の青が通常，赤が常歩で，矢印区間が右脚の遊脚期<BR>
+      特徴として、
+      <ul>
+        <li>被験者A・B　→　減少分だけ分だけ通常時に比べ相対的に逆方向へ回旋している</li>
+        <li>被験者C　→　通常時に対して逆方向へ腰が回旋している</li>
+      </ul>
+
+      </td>
+    </tr>
+   <tr>
+      <td width="500" align="center">Viconによる比較<BR>
+      <img src="https://robotics.naist.jp/~kento-ta/images/namiashi4.jpg" aligin="center"><br>
+	<a href="CAP1AND2MPG.MPG">動画 (25.4 MB)</p>
+
+      </td>
+      <td>左が通常歩行、右が常歩のViconでの取得データである。<BR>
+      </td>
+    </tr>
+
+
+
+  </tbody>
+</table>
+</div>
+
+
+
+
+
+<div align="center">
+
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tbody>
+    <tr>
+      <td width="100%" bgcolor="#bbbbbb" align="center"> <font
+ color="#222222">提案手法、実験の内容</font> </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<div align="center">
+
+<table border="1">
+  <tbody>
+    <tr>
+
+
+      <td width="500" align="center">提案手法<br>
+<p align=center>
+     <img src="https://robotics.naist.jp/~kento-ta/images/teian.jpg" style="width: 400px;">
+</td>
+      <td>
+	左に提案手法を示す<BR>
+	腰回旋が遊脚モーメントに有効に作用していない場合を避けるため、
+	腰回旋の軌道をモーメント発生原因である遊脚の振りに応じて変化させるように定義した
+      </td>
+    </tr>
+    <tr>
+
+      <td width="500" align="center">擬似常歩歩行<br>
+	<p align=center>
+      	<img src="https://robotics.naist.jp/~kento-ta/images/ex1_1.jpg" style="width: 500px aligin="center">
+	<a href="Pat4._normalW.mpg">動画（通常歩行）1.80 MB</p>
+	<a href="Pat6_revW.mpg">動画（腰逆回旋（擬似常歩））1.80 MB</p>
+      </td>
+      <td>
+      見るべき点：腰部の回転が違う<BR><BR>
+      <img src="https://robotics.naist.jp/~kento-ta/images/ex1_2.jpg" style="width: 440px"> 
+      </td>
+    </tr>
+    <tr>
+
+
+      <td width="500" align="center">歩行速度比較<br>
+        <p align=center>
+        <img src="https://robotics.naist.jp/~kento-ta/images/ex2.jpg"align="center">
+        <a href="PatGen_teian_0.5T_suberi.mpg">動画　2.38 MB</p>
+      </td>
+      <td>
+        左が通常歩行、右が提案手法を表している<BR>通常歩行では足裏のモーメントがのため歩行軌道が歪んでいるが、
+提案手法では改善されている<BR>
+       
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+
+
+<div align="center">
+
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tbody>
+    <tr>
+      <td width="100%" bgcolor="#bbbbbb" align="center"> <font
+ color="#222222">結果</font> </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<div align="center">
+
+<table border="1">
+  <tbody>
+    <tr>
+
+
+      <td width="500" align="center">足裏モーメント<br>
+<p align=center>
+     <img src="moment2.bmp" style="width: 520px;">
+</td>
+      <td>
+	擬似常歩において<BR>
+	通常歩行に対し　→　約43%減少<BR>
+	腰逆回旋疑似常歩に対し　→　約33%減少<BR>
+      </td>
+    </tr>
+    <tr>
+
+
+      <td width="500" align="center">力・モーメント積分量の比較<br>
+        <p align=center>
+        <img src="integral.jpg"align="center">
+      </td>
+      <td>
+	XYZ方向の力成分それぞれについて計算を行った。<BR>
+力の積分に関してはY，Z方向についてはどの歩行形態もほぼ変わっていないが，提案手法を用いた場合のみ，X方向の力が小さくなっている事が確認出来る．<BR>
+また，モーメントの積分に関しては腰が逆方向へ回旋するにつれ，値が減少しており，特に提案手法時で最も小さくなっている事が確認出来る<BR><BR>
+        <p align=center>
+	X(進行)方向の力が小さい<BR>
+	↓<BR>
+	進行方向の加速度変化が小さい。<BR>
+	並進滑りが発生しにくい<BR>
+	モーメントが小さい<BR>
+	↓<BR>
+	無駄な回転力が発生しない<BR>
+	回転滑りが発生しにくい<BR>
+
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<div align="center">
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tbody>
+    <tr>
+      <td width="100%" bgcolor="#bbbbbb" align="center"> 文献リスト<br>
+
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<div align="left">
+<ul style="margin-top: 2pt; margin-bottom: 2pt;">
+  <li>白榮 健司，上田 淳，松本 吉央，小笠原 司，小田 伸午："常歩（なみあし）に習う腰回旋を利用した2足歩行のモーメント補償"、第9回ロボティクス ・シンポジア，pp108-113, 2004.</li>
+  <li> 上田 淳, 池田 篤俊, 白榮 健司, 竹村 裕, 小笠原 司, 小田 伸午
+:"股関節の外旋モーメントにより体幹を捻らない歩行「常足」(なみあし)の運動特性," 第21回日本ロボット学会学術講演会予稿集CD-ROM,
+2J27, 2003.9.</li>
+</ul>
+</div>
+<div align="center">
+
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tbody>
+    <tr>
+      <td width="100%" bgcolor="#bbbbbb" align="center">関連研究<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<div align="left">
+
+<ul style="margin-top: 2pt; margin-bottom: 2pt;">
+  <li> <a href="http://www.generalrobotix.com/">ゼネラルロボティクス株式会社</a></li>
+  <li> <a href="http://www.kawada.co.jp/ams/">川田工業　航空・機械事業部</a></li>
+  <li> <a href="http://www.is.aist.go.jp/humanoid/index_j">産業技術総合研究所　ヒューマノイド研究グループ</a></li>
+
+</ul>
+</div>
+<div align="center">
+
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tbody>
+    <tr>
+      <td width="100%" bgcolor="#bbbbbb" align="center"> 今後のプロジェクト展開予定<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div align="left">
+<ul style="margin-top: 2pt; margin-bottom: 2pt;">
+  <li>全身協調による障害物回避</li>
+  <li>環境認識とタスク遂行（拘束物体への作用） </li>
+</ul>
+</div>
+<div align="center">
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tbody>
+    <tr>
+      <td width="100%" bgcolor="#bbbbbb" align="center"> <font
+ color="#222222">研究メンバー</font> </td>
+
+    </tr>
+  </tbody>
+</table>
+</div>
+<div align="left"> 現在のメンバー：
+<ul style="margin-top: 2pt; margin-bottom: 2pt;">
+  <li>白栄健司：体幹を捻らない歩行</li>
+  <li>武内 &#160;隆：全身協調による障害物回避 </li>
+  <li>日浦和彦：環境認識とタスク遂行（拘束物体への作用）</li>
+
+  <li>Florian Scchorradt：ビジョンシステム</li>
+  <li>上田 &#160;淳<br>
+  </li>
+</ul>
+</div>
+<div align="left">
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tbody>
+    <tr>
+
+      <td width="100%" bgcolor="#bbbbbb" align="center"> <font
+ color="#222222">連絡先</font> </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<div align="left">上田淳<br> (<img src="http://robotics.naist.jp/~uedajun/uedajunmail.gif">)<br>
+<br>
+<a href="http://robotics.naist.jp/">研究室トップへ戻る</a> </div>
+
+<div align="right"> <a href="http://validator.w3.org/check/referer"><img
+ border="0" src="valid-html401.gif" alt="Valid HTML 4.01!"
+ height="31" width="88"></a> </div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-414006-1";
+urchinTracker();
+</script>
+</body>
+</html>

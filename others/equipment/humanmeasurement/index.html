@@ -1,0 +1,329 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja-JP">
+<head>
+<title>human measurement</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-2022-jp">
+<meta name="keywords" content="Vision, Robot, System">
+<meta http-equiv="Content-Style-Type" content="text/css">
+</head>
+
+<body text="#333333" background="background.gif" bgcolor="#FFFFFF" link="#00008B" vlink="#696969" alink="#FF0000">
+
+<div align="center">
+ <table width="100%" border="0" cellspacing="0" cellpadding="2">
+  <tr><td width="100%" bgcolor="#bbbbbb" align="center"> </td></tr>
+
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font size=5 color="#222222">人間計測</font>
+   </td>
+  </tr>
+  <tr><td width="100%" bgcolor="#bbbbbb" align="center"></td></tr>
+  <tr>
+   <td width="100%" align="center">
+
+    <font size=2>
+     奈良先端科学技術大学院大学 ロボティクス講座<br>
+     作成 2003年12月12日<br>
+     更新 2003年12月12日
+    </font>
+   </td> 
+  </tr>
+ </table>
+</div>
+
+<div align="center">
+ <table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font color="#222222">研究の目的</font>
+   </td>
+  </tr>
+ </table>
+
+</div>
+<p></p>
+<div align="left">
+
+近年、アシモに代表されるような様々な二足歩行ロボットが開発されており、その性能は年々向上しています。
+その歩行状態は完全に人間を模倣できているとは言えません。そこで、人間を計測しモデル化することで、それらを
+ロボットに適用することにより、さならる人間らしく歩行することを目的としています。
+
+<p></p>
+</div>
+
+<div align="center">
+ <table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font color="#222222">計測項目</font>
+   </td>
+  </tr>
+ </table>
+</div>
+
+<div align="center">
+ <table border=1>
+ <tbody>
+
+    <th colSpan=2>足指機能の解明</th>
+
+ </tr>
+
+
+<td colSpan=2>
+      二足歩行ロボットの足の形に注目してみるといわゆる一枚板が多く、足指などの人間が進化の中で得た足の形が反映されているものは少ない。
+      また人間の足においては、立位姿勢時の安定化における足指の役割については詳細に報告されているが、歩行時におけるそれについてはまだ議論の余地がある。
+   　</td>
+   </tr>
+  <tr>
+   <td width="500" align="center">
+    足指圧力計測システム<br><br>
+    <img src="https://robotics.naist.jp/~kento-ta/images/pressure_sys.jpg" alt="pressure_sys"><br>
+    図1.センサ部分<br><br>
+    <img src="https://robotics.naist.jp/~kento-ta/images/pressure_con.jpg" alt="pressure_con"><br>
+　　図2.コントローラ部分<br><br>
+
+
+   </td>
+
+   <td>
+    センサ部分
+    <ul style="margin-top:2pt; margin-bottom:2pt;">
+     <li>各足指の先端及び付根と踵に圧力センサ(FSR)を貼り付け　計11個
+    </ul><br>
+    コントローラ部分
+    <ul style="margin-top:2pt; margin-bottom:2pt;">
+     <li>電源も含めボックス内で完結
+     <li>ノートPCで計測可能
+     <li>装着状態で計測可能
+     <li>最大300Hzのサンプリング可能
+    </ul>
+   </td>
+
+  </tr>
+
+  <tr>
+   <td width="500" align="center">
+    3D Motion capture<br><br>
+    <img src="https://robotics.naist.jp/~kento-ta/images/3D_front.jpg" alt="3D front">
+    <img src="https://robotics.naist.jp/~kento-ta/images/3D_back.jpg" alt="3D back"><br>
+     図3．マーカ取り付け例
+   </td>
+   <td>
+   VICON    (Vicon Motion Systems製)
+    <ul style="margin-top:2pt; margin-bottom:2pt;">
+     <li>複数の高精度カメラにより捕らえられたビデオイメージから 反射マーカー位置を完全自動 で3次元化
+    </ul><br><br>
+   マーカー位置<br>
+    <ul style="margin-top:2pt; margin-bottom:2pt;">
+     <li>肩（2＋1）　頚の付根（1）<br>
+     <li>腰（4）　　 膝（2）　<br>
+     <li>くるぶし（2）　　           　　　計12個<br>
+    </ul><br><br>
+   </td>
+</tr>
+
+  <tr>
+   <td width="500" align="center">
+    呼吸機能計測システム<br><br>
+    <img src="https://robotics.naist.jp/~kento-ta/images/kokyu1.jpg" alt="breath measurement"><br>
+     図4.計測システム風景<br>
+    <img src="https://robotics.naist.jp/~kento-ta/images/kokyu2.jpg" alt="particular"><br>
+　　 図5.口部詳細図    
+   </td>
+   <td>
+    エアロモニタ　AE-280S      (ミナト医科学製) 
+    <ul style="margin-top:2pt; margin-bottom:2pt;">
+     <li>呼吸機能検査マスク を 装着し、呼吸毎のガス濃度変化を計測
+     <li>酸素消費量の計測により、エネルギー消費量を検討
+    </ul><br><br>
+
+　　立命館大学　スポーツ・健康産業研究センター協力
+
+   </td>
+</tr>
+
+
+　　<th colSpan=2>「常足」の運動特性</th>
+
+
+<tr>
+  　<td colSpan=2>
+      走行（歩行）運動に伴う回転モーメントをいかに制御，補償するか？
+      という目的のもと、二軸走歩行を持つといわれる、常足の解析を行っている。特徴として、
+    <ul style="margin-top:2pt; margin-bottom:2pt;">
+     <li>股関節外旋位
+     <li>歩隔大
+　　 <li>進行方向横方向の加速度および変位大
+     <li>体幹捻り少（肩と腰の位相が近い）
+     <li>股関節による外旋モーメントの発生
+     <li>進行方向加速度の多峰性
+    </ul>
+   　がある。
+　</td>
+ </tr>
+
+
+ <tr>
+   <td width="500" align="center">
+    3Dモーションキャプチャ＋加速度計<br><br>
+    <img src="https://robotics.naist.jp/~kento-ta/images/namiashi.jpg" alt="namiashi">
+    <img src="https://robotics.naist.jp/~kento-ta/images/namiashi_3D.jpg" alt="3D"><br>
+    図6．モーションキャプチャによる取得例
+   </td>
+   <td>
+    計測には、3Dモーションキャプチャ(Vicon)と加速度計を用いている。
+   </td>
+ </tr>
+
+ <tr>
+   <td width="500" align="center">
+    足裏分布圧計測装置<br><br>
+    <img src="https://robotics.naist.jp/~kento-ta/images/namiashi2.jpg" alt="takemaru remote"><br>
+     図7．圧力分布測定風景
+   </td>
+   <td>
+   歩行時の足裏部分の圧力を見るために、圧力センサを用いている。
+   </td>
+ </tr>  
+
+ </table>
+</div>
+
+
+
+
+<div align="center">
+ <table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font color="#222222">メディアでの紹介</font>
+   </td>
+  </tr>
+ </table>
+
+</div>
+
+<div align="left">
+ <ul>
+  <li>2003.06.17 NHK総合 23:15〜23:45 「ものしり一夜づけ：よみがえれ！武蔵の極意」に歩行実験のデータ（3Dモーションキャプチャと足裏圧分布）を提供しました．出演は一瞬でした． 
+
+ </ul>
+</div>
+
+
+<div align="center">
+ <table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font COLOR="#222222">文献リスト</font>
+   </td>
+  </tr>
+
+ </table>
+</div>
+
+<div align="left">
+ <ol style="margin-top:2pt; margin-bottom:2pt;">
+  <li>岩間博哉，竹村裕，上田淳，松本吉央，小笠原 司， "足指免荷時足指圧力計測に基づく歩行運動に及ぼす足指機能解明"，日本機械学会論文集C編，掲載予定．
+  <p></p>
+
+  <li>岩間 博哉，竹村 裕，上田 淳，松本 吉央，小笠原 司，"歩行運動における足の部位の役割"、第2回福祉工学シンポジウム，2002.
+  <p></p>
+
+  <li>上田 淳，池田 篤俊，白栄 健司，竹村 裕，小笠原 司，小田 伸午，"股関節の外旋モーメントにより体幹を捻らない歩行「常足」(なみあし)の運動特性"，第21回日本ロボット学会学術講演会予稿集，2J27，2003, (CD-ROM)
+      <A HREF="https://robotics.naist.jp/~kento-ta/images/namiashi_rsj2003.pdf"><IMG BORDER="0" SRC="https://robotics.naist.jp/~kento-ta/images/pdf.gif" ALIGN="TOP" ALT="Download this paper"></A>
+  <p></p>
+
+  <li>竹村　裕，岩間　博哉，上田　淳，松本　吉央，小笠原　司， "歩行運動における足指機能の解明"， 第3回福祉工学シンポジウム，pp.97-100, 2003．
+  <p></p>
+
+  <li>上田　淳，白栄　健司，池田　篤俊，竹村　裕，小笠原　司，小田　伸午, "股関節の外旋モーメントを利用した歩行及び運動の解析"， 第3回福祉工学シンポジウム，pp.85-88, 2003
+  <p></p>
+
+ </ol>
+</div>
+
+<div align="center">
+ <table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font COLOR="#222222">関連研究</font>
+   </td>
+  </tr>
+ </table>
+</div>
+
+<div align="left">
+ <ul style="margin-top:2pt; margin-bottom:2pt;">
+  
+  <li>Vicon(光学式モーションキャプチャーシステム),<a href=" http://www.vicon.com/">VICON Motion System</a>
+      <a href="http://www.crescentvideo.co.jp/vicon/index.shtml">VICON Motion caputure System</a>
+
+ </ul>
+</div>
+
+<div align="center">
+ <table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+
+    <font color="#222222">研究メンバー</font>
+   </td>
+  </tr>
+ </table>
+</div>
+
+<div align="left">
+ 現在のメンバー：
+ <ul style="margin-top:2pt; margin-bottom:2pt;">
+  <li>白栄健司：常足を用いたバランス補償
+  <li>相宅玲志：筋力推定 
+  <li>上田淳
+ </ul>
+
+ 
+ 過去のメンバー：
+ <ul style="margin-top:2pt; margin-bottom:2pt;">
+  <li>岩間博哉 （2002年度修了）：歩行運動における足指の役割に関する研究
+ </ul>
+
+ 共同研究者：
+ <ul style="margin-top:2pt; margin-bottom:2pt;">
+  <li>小田　伸午　京都大学大学院 人間・環境学研究科
+ </ul>
+</div>
+
+<div align="left">
+ <table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font color="#222222">連絡先</font>
+
+   </td>
+  </tr>
+ </table>
+</div>
+
+<div align="left">
+上田 淳<br>
+<img src="uedajunmail.gif" alt="mail address"><br>
+<br>
+<a href="http://robotics.naist.jp">研究室トップへ戻る</a>
+</div>
+
+<div align="right">
+ <a href="http://validator.w3.org/check/referer"><img border="0" src="valid-html401.gif" alt="Valid HTML 4.01!" height="31" width="88"></a>
+</div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-414006-1";
+urchinTracker();
+</script>
+</body>
+</html>

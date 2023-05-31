@@ -1,0 +1,368 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja-JP">
+<head>
+<title>Intelligent Wheelchair</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-2022-jp">
+<meta name="keywords" content="Vision, Robot, System">
+<meta http-equiv="Content-Style-Type" content="text/css">
+</head>
+
+<body text="#333333" background="background.gif" bgcolor="#FFFFFF" link="#00008B" vlink="#696969" alink="#FF0000">
+
+<div align="center">
+ <table width="100%" border="0" cellspacing="0" cellpadding="2">
+  <tr><td width="100%" bgcolor="#bbbbbb" align="center"> </td></tr>
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font size=5 color="#222222">視線操縦型インテリジェント車いす</font>
+   </td>
+  </tr>
+  <tr><td width="100%" bgcolor="#bbbbbb" align="center"></td></tr>
+  <tr>
+   <td width="100%" align="center">
+    <font size=2>
+     奈良先端科学技術大学院大学 ロボティクス講座<br>
+     作成 2003年06月26日<br>
+     更新 2003年06月26日
+    </font>
+   </td> 
+  </tr>
+ </table>
+</div>
+
+<div align="center">
+ <table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font color="#222222">研究の目的</font>
+   </td>
+  </tr>
+ </table>
+</div>
+
+<div align="left">
+ 車いすは身体の不自由な人にとって重要な移動手段である．今後は，高齢化社会の到来にともない，より安全で快適な「インテリジェント車いす」の実用化が望まれている．そのため，近年車いすの自動化，知能化に関する研究は盛んに行われており，これらの研究は，以下の２つに大別できる．<br>
+
+ <ol style="margin-top:2pt; margin-bottom:2pt;">
+  <li>内界・外界センサを用いて，車いすの自動走行，もしくは制御のアシストを行う
+  <li>ユーザの顔の向きを検出し，それをもとに走行動作を行う
+ </ol>
+ 1. は，超音波センサ等の外界センサを用いて，自律的でスムーズな障害物回避を実現し，乗り心地を改善するといった研究で，従来の移動ロボットの研究に近いものである．これに対して，2. はヒューマン・インタフェースの研究に含まれるものである．我々はこれら両方の側面に関する技術の研究を行っている．
+ </div>
+
+<div align="center">
+ <table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font color="#222222">アプローチ</font>
+   </td>
+  </tr>
+ </table>
+</div>
+
+<div align="left">
+ 我々は，これまでに顔の向きや視線の向きを計測するシステムを開発してきた．その応用として，ハンズフリーで操縦できる車いすロボットを開発しようと考え，この研究をスタートした．基本的な操縦のしかたは，
+ <ul style="margin-top:2pt; margin-bottom:2pt;">
+  <li>顔の向いている方向に進む．
+  <li>うなずくとスタート，首を振るとストップ．
+ </ul>
+ となっている．また，障害物回避，自己位置推定には外部をセンシングするセンサを用いることにした．これらの組み合わせにより，
+ <ul style="margin-top:2pt; margin-bottom:2pt;">
+  <li>進みたい方向を見るだけでよい．
+  <li>壁のポスターを見ていても壁にはぶつからないで止まる．
+ </ul>
+ という機能を実現した．
+</div>
+
+<div align="center">
+ <table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font color="#222222">実験システム</font>
+   </td>
+  </tr>
+ </table>
+</div>
+
+<div align="center">
+ <table border=1>
+ <tbody>
+  <tr>
+   <td width="500" align="center">
+    インテリジェント車いす１号機（WATSON 1号）<br>
+    <img src="https://robotics.naist.jp/~kento-ta/images/watson1.jpg" alt="watson1">
+   </td>
+   <td>
+    WATSON 1号は，
+    <ul style="margin-top:2pt; margin-bottom:2pt;">
+     <li>電動車いす スズキ MC15S
+     <li>ボードカメラ×２台
+     <li>フィールド多重化回路
+     <li>画像処理ボード 日立 IP5005
+     <li>DOS/V PC (PentiumII 450MHz)
+     <li>無停電電源
+     <li>超音波距離センサ 7個
+    </ul>
+    を利用しており，
+    <ul style="margin-top:2pt; margin-bottom:2pt;">
+     <li>無停電電源のバッテリーにて３０分程度走行可能
+     <li>超音波センサ7つにより，障害物を検出・回避可能．
+    </ul>
+    という特徴がある．
+   </td>
+  </tr>
+  <tr>
+   <td align="center">
+    インテリジェント車いす２号機 (WATSON2号)<br>
+    <img src="https://robotics.naist.jp/~kento-ta/images/watson2.jpg" alt="watson2">
+   </td>
+   <td>
+     WATSON 2号は，
+     <ul style="margin-top:2pt; margin-bottom:2pt;">
+     <li>電動車いす ミサワホーム M-Smart
+     <li>小型カメラ×２台
+     <li>フィールド多重化回路
+     <li>ノートPC (PentiumII 600MHz)
+     <li>レーザー距離センサ SICK LMS200
+    </ul>
+    を利用しており，画像処理と車いすの制御をノートPC１台で行っている．レーザ距離センサを用いることで，精度よく屋内での自己位置を認識しながら障害物を検出・回避することができる．
+   </td>
+  </tr>
+ </table>
+</div>
+
+<div align="center">
+ <table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font color="#222222">実験の様子</font>
+   </td>
+  </tr>
+ </table>
+</div>
+
+<div align="center">
+ <table border=1>
+ <tbody>
+  <tr>
+   <td width="500" align="center">
+    屋内走行実験の様子<br>
+    <img src="https://robotics.naist.jp/~kento-ta/images/watson1_indoor1.jpg" alt="indoor">
+    <img src="https://robotics.naist.jp/~kento-ta/images/watson1_indoor2.jpg" alt="indoor">
+    <br>
+    <img src="https://robotics.naist.jp/~kento-ta/images/indoor_face.jpg" alt="indoor face">
+   </td>
+   <td>
+    実際に廊下を走ってみると，予想以上に照明変化が大きいことが分かった．特に窓から入ってくる太陽光の影響が大きいが，それでも顔計測は失敗せずに顔の動きで操縦することができた．(2000.04.21)</td>
+  </tr>
+  <tr>
+   <td align="center">
+    屋外走行実験の様子<br>
+    <img src="https://robotics.naist.jp/~kento-ta/images/watson1_outdoor.jpg" alt="watson1 outdoor">
+    <img src="https://robotics.naist.jp/~kento-ta/images/watson1_outdoor_env.jpg" alt="watson1 outdoor environment">
+   </td>
+   <td>
+    試しに学内の池の周囲を走行したところ，太陽光が逆光として直接カメラに入る時以外は，問題なく走行できた．(2000.05.01)</td>
+  </tr>
+  <tr>
+   <td align="center">
+    屋内での自己位置推定しながらの走行の様子（大学内）
+    <br>
+    <img src="https://robotics.naist.jp/~kento-ta/images/goto1.jpg" alt="localization">
+    <img src="https://robotics.naist.jp/~kento-ta/images/goto2.jpg" alt="localization">
+   </td>
+   <td>
+    図中右側は推定した自己位置を表している．中央下の四角が車いすの位置を，またその周囲の緑色の部分はレーザ距離センサでスキャンした壁などの点を表している．車いすを囲む赤い円は，障害物検出の結果，進める方向を示している．この場合では，どこにも衝突するものがない場合は真円になるが，壁の近くだと進めない方向（右図の場合は左側）が欠けて表示されている．
+   </td>
+  </tr>
+ </table>
+</div>
+
+<div align="center">
+ <table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font color="#222222">実験ビデオ</font>
+   </td>
+  </tr>
+ </table>
+</div>
+
+
+<div align="center">
+ <table border=2>
+ <tbody>
+  <tr>
+   <td><a href="indoor.mpg">屋内走行実験</a><br>(MPEG1, 7.8MB)</td>
+   <td><a href="outdoor.mpg">屋外走行実験</a><br>(MPEG1, 1.9MB)</td>
+   <td><a href="robofesta.mpg">ロボフェスタ関西・プレ大会</a><br>(MPEG1, 8.3MB)</td>
+  </tr>
+  <tr>
+   <td><a href="../../MOVIE/wchair/indoor.mpg"><img src="indoor.jpg" alt="indoor"></a></td>
+   <td><a href="../../MOVIE/wchair/outdoor.mpg"><img src="outdoor.jpg" alt="outdoor"></a></td>
+   <td><a href="../../MOVIE/wchair/robofesta.mpg"><img src="robofesta.jpg" alt="robofesta"></a></td>
+  </tr>
+ </table>
+</div>
+
+<div align="center">
+ <table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font color="#222222">メディアでの紹介</font>
+   </td>
+  </tr>
+ </table>
+</div>
+
+<div align="left">
+<!--
+ <table border=2>
+ <tbody>
+  <tr>
+   <td><a href="takuro.mpg">辰巳さんも試乗</a><br>(MPEG1, 32秒, 2.3MB)</td>
+   <td><a href="news.mpg">ニュース</a><br>(MPEG1, 50秒, 3.7MB)</td>
+  </tr>
+  <tr>
+   <td><a href="takuro.mpg"><img src="wchair1.jpg" alt="movie1"></a></td>
+   <td><a href="news.mpg"><img src="wchair2.jpg" alt="movie2"></a></td>
+  </tr>
+ </table>
+-->
+ <ul>
+  <li>2000.08.17 日本経済新聞 夕刊<br>
+       車いす、目線で運転
+  <li>2000.12.01 日本テレビ『ズームイン！！朝！』<br>
+       情報トレイン「21世紀目前びっくりマシーン最前線」
+  <li>2001.01.08 読売新聞 朝刊<br>
+       車いすロボット開発　顔の動きで進路自在
+  <li>2002.10.19 朝日新聞 夕刊<br>
+       Science &amp; Technology−ハイテク顔パス「コンビニ・福祉 広がる応用分野」視線の動きがハンドルの役目をする車いす
+  <li>2002.03.06 関西テレビ『痛快！エブリディ』<br>
+       「知らんかったわ！奈良ってエエやん！」
+  </ul>
+</div>
+
+<div align="center">
+ <table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font color="#222222">デモの記録</font>
+   </td>
+  </tr>
+ </table>
+</div>
+
+<div align="left">
+ <ul style="margin-top:2pt; margin-bottom:2pt;">
+  <li>ロボフェスタ関西2001プレ大会（2000年8月11日〜13日，大阪国際会議場）<br>
+  <div align="center">
+<!--   <img src="https://robotics.naist.jp/~kento-ta/images/watson1_robofestapre1.jpg" alt="watson at robofesta"> -->
+   <img src="https://robotics.naist.jp/~kento-ta/images/watson1_robofestapre2.jpg" alt="watson at robofesta">
+   <img src="https://robotics.naist.jp/~kento-ta/images/watson1_robofestapre3.jpg" alt="watson at robofesta">
+  </div>
+  <li>ロボフェスタ関西2001（2001年7月20日〜7月29日，大阪国際会議場）
+  <div align="center">
+   <img src="https://robotics.naist.jp/~kento-ta/images/robofesta_wchar01.jpg" alt="watson at robofesta">
+   <img src="https://robotics.naist.jp/~kento-ta/images/robofesta_wchar02.jpg" alt="watson at robofesta">
+  </div>
+  <li>ROBODEX2003（2003年4月3日〜4月6日，パシフィコ横浜）
+  <div align="center">
+   <img src="https://robotics.naist.jp/~kento-ta/images/robodex_booth.jpg" alt="robodex2003 NAIST booth">
+   <img src="https://robotics.naist.jp/~kento-ta/images/robodex_watson1.jpg" alt="watson at robodex2003">
+  </div>
+ </ul>
+</div>
+
+<div align="center">
+ <table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font COLOR="#222222">文献リスト</font>
+   </td>
+  </tr>
+ </table>
+</div>
+
+<div align="left">
+ <ol style="margin-top:2pt; margin-bottom:2pt;">
+  <li>松本 吉央, 伊野 智行, 小笠原 司: "視線対話型インテリジェント車椅子の開発", 日本機会学会ロボティクス・メカトロニクス講演会'00講演論文集, 1P1-77-123, 2000.
+  <li>伊野 智行, 松本 吉央, 今井 正和, 小笠原 司: "顔と視線方向による電動車椅子の走行支援", 第18回日本ロボット学会学術講演会予稿集, pp.405-406, 2000.
+  <li>Yoshio Matsumoto, Tomoyuki Ino, Tsukasa Ogasawara: "Development of Intelligent Wheelchair System with Face and Gaze Based Interface", Proceedings of 10th IEEE Int. Workshop on Robot and Human Communication (ROMAN 2001), pp.262-267, 2001.
+  <li>松本 吉央, 伊野 智行, 小笠原 司: "顔と視線情報による電動車椅子の走行支援システム", 電気学会システム・制御研究会, SC-10-30, pp.59-64.
+ </ol>
+</div>
+
+<div align="center">
+ <table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font COLOR="#222222">関連研究</font>
+   </td>
+  </tr>
+ </table>
+</div>
+
+<div align="left">
+ <ul style="margin-top:2pt; margin-bottom:2pt;">
+  <li>大阪大学・白井研究室 <a href="http://www-cv.mech.eng.osaka-u.ac.jp/research/hi-j.html">顔の視覚情報処理を用いた知的車椅子に関する研究</a>
+  <li>Erwin Prassler, Jens Scholz and Paolo Fiorini: A Robotic Wheelchair for Crowded Public Environments. IEEE Robotics and Automation Magazine, pp.38-45, March, 2000.
+ </ul>
+</div>
+
+<div align="center">
+ <table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font color="#222222">研究メンバー</font>
+   </td>
+  </tr>
+ </table>
+</div>
+
+<div align="left">
+ 現在のメンバー：
+ <ul style="margin-top:2pt; margin-bottom:2pt;">
+  <li>足立佳久：視線情報に基づくユーザの注視状態の推定とサポート
+  <li>池山智之：ユーザの意図の推定
+  <li>松本吉央
+ </ul>
+ 
+ 過去のメンバー：
+ <ul style="margin-top:2pt; margin-bottom:2pt;">
+  <li>齋藤裕昭（2002年度修了）：レーザ距離センサの情報を用いたメモリベースな自律移動
+  <li>谷　裕章（2001年度修了）：天井画像を用いた自律移動
+  <li>後藤健志（2001年度修了）：WATSON2号の開発，レーザー距離センサを用いた自己位置推定，障害物回避
+  <li>紙　弘和（2000年度修了）：天井画像を用いた自律移動，PCMCIAキャプチャカードのドライバ開発
+  <li>伊野智行（2000年度修了）：WATSON1号の開発，ジェスチャ認識，超音波センサを用いた障害物回避
+ </ul>
+</div>
+
+<div align="left">
+ <table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font color="#222222">連絡先</font>
+   </td>
+  </tr>
+ </table>
+</div>
+
+<div align="left">
+松本吉央 (<img src="mail_address.gif" alt="mail address">)<br>
+<br>
+<a href="http://robotics.naist.jp">研究室トップへ戻る</a>
+</div>
+
+<div align="right">
+ <a href="http://validator.w3.org/check/referer"><img border="0" src="valid-html401.gif" alt="Valid HTML 4.01!" height="31" width="88"></a>
+</div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-414006-1";
+urchinTracker();
+</script>
+</body>
+</html>

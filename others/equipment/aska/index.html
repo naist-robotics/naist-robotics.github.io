@@ -1,0 +1,477 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja-JP">
+<head>
+<title>Intelligent Wheelchair</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-2022-jp">
+<meta name="keywords" content="Vision, Robot, System">
+<meta http-equiv="Content-Style-Type" content="text/css">
+</head>
+
+<body text="#333333" background="background.gif" bgcolor="#FFFFFF" link="#00008B" vlink="#696969" alink="#FF0000">
+
+<div align="center">
+ <table width="100%" border="0" cellspacing="0" cellpadding="2">
+  <tr><td width="100%" bgcolor="#bbbbbb" align="center"> </td></tr>
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font size=5 color="#222222">受付案内ロボットASKA</font>
+   </td>
+  </tr>
+  <tr><td width="100%" bgcolor="#bbbbbb" align="center"></td></tr>
+  <tr>
+   <td width="100%" align="center">
+    <font size=2>
+     奈良先端科学技術大学院大学 ロボティクス講座<br>
+     作成 2003年07月01日<br>
+     更新 2003年07月01日
+     <br>
+     <small>
+      <!--#config timefmt="%Y/%b/%d"-->
+      Last Updated:
+      <!--#flastmod file="."-->
+     </small>
+    </font>
+   </td> 
+  </tr>
+ </table>
+</div>
+
+<div align="center">
+ <table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font color="#222222">研究の目的</font>
+   </td>
+  </tr>
+ </table>
+</div>
+
+<div align="left">
+
+本プロジェクトでは，情報科学研究科の各研究室において開発された要素技術を持ち寄り，一台の人型ロボット（テムザックIV）の上に実装することで，研究科のシンボルとなるような受付ロボットシステムを構築し，稼働させることを目的としてはじめられた．まず第一段階として，音情報処理学講座（鹿野研）の音声認識技術と，ロボティクス講座（小笠原研）のロボット構築・制御技術を合わせることで，実際に受付においてデモを行うシステムの構築を行った．次に，ロボティクス講座の画像処理を用いた人検出技術を用いて，人を発見したり，アイ・コンタクトをとるシステムを構築している．
+</div>
+
+<div align="center">
+ <table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font color="#222222">開発の概要</font>
+   </td>
+  </tr>
+ </table>
+</div>
+
+<div align="left">
+2001年7月31日に奈良先端大にて開催されたロボフェスタ生駒において，受付案内ロボット（ASKAと命名）のお披露目デモンストレーションを行った．ここでは，以下の機能を持つ受付案内ロボットを実現た．
+ <ol style="margin-top:2pt; margin-bottom:2pt;">
+  <li>受付の前に立っている人をレーザ距離センサを用いて見つけ，そちらを向く．
+  <li>音声による質問を認識する．
+  <li>質問の答えを，ジェスチャを交えて発話する．
+ </ol>
+その後，ステレオカメラを用いた人・顔の発見・追跡機能や，インターネットからの情報収集機能等が追加され，現在に至る．
+</div>
+
+<div align="center">
+ <table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font color="#222222">対話処理の概要</font>
+   </td>
+  </tr>
+ </table>
+</div>
+
+<div align="left">
+
+ <ul>
+  <li>音声認識
+  <ul style="margin-top:2pt; margin-bottom:2pt;">
+   <li>大語彙連続音声認識レコーダJuliusを使用
+   <li>語彙数約2万語
+   <li>言語モデルの学習に利用したリソース
+   <ul style="margin-top:2pt; margin-bottom:2pt;">
+    <li>学内案内対話用質問文
+    <li>学内Webページ
+    <li>学内メーリングリスト
+   </ul>
+  </ul>
+  <li>音声対話<br>
+       ASKA は情報科学研究科のスタッフ・研究室に関する情報（場所，内線番号）や，周辺の施設についての知識データを持っており，返答可能な質問として以下のようなものがある．
+  <ul style="margin-top:2pt; margin-bottom:2pt;">
+   <li>こんにちは/さようなら
+   <li>あなたのお名前はなんですか/何歳ですか？
+   <li>あなたは何ができますか？
+   <li>○○講座はどこですか？
+   <li>○○先生の内線番号を教えて下さい
+   <li>公衆電話/内線電話はどこにありますか？
+   <li>事務室/トイレはどこにありますか？
+   <li>近くにバス停/駐車場はありますか？
+   <li>大学の食堂/グラウンドはどこですか？
+   <li>今日/明日の天気を教えて下さい
+  </ul>
+ </ul>
+</div>
+
+<div align="center">
+ <table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font color="#222222">実験システム</font>
+   </td>
+  </tr>
+ </table>
+</div>
+
+<div align="center">
+ <table border=1>
+ <tbody>
+  <tr>
+   <td width="500" align="center">
+    受付案内ロボットASKA<br>
+    <img src="https://robotics.naist.jp/~kento-ta/images/aska_body.jpg" alt="aska body">
+    <img src="https://robotics.naist.jp/~kento-ta/images/aska_head.jpg" alt="aska head">
+   </td>
+   <td>
+ASKAのベースとなっているのは，人間型遠隔操作ロボット・テムザックIV（テムザック社）である．テムザックIVのシステムはWindows上で動作し，PHS経由での専用コックピットを用いた遠隔操縦に特化されているため，自律ロボットとしての利用はできない．そこで搭載されているコンピュータをLinuxベースの組み込みPCに替え，通常のLAN環境に接続した．また，人間と対話したり，画像による環境認識を行うために，カメラを組み込んだロボットヘッド（図（右））を製作した．このシステムは，通信総合研究所の小嶋氏が開発された Infanoid の頭部のコピーである．両眼球はそれぞれパンの自由度を持ち，また広角と望遠の超小型CCDカラーカメラ(ELMO社QN42H) が1つづつ組み込まれている．また，口部は開閉と上げ下げの自由度を持っており，人とコミュニケーションする時に重要となる発話や感情表現の生成に用いられる．さらに，音声認識のためのマイクがロボットの前に設置されている．
+   </td>
+  </tr>
+  <tr>
+   <td width="500" align="center">
+    ハードウェア構成<br>
+    <img src="https://robotics.naist.jp/~kento-ta/images/aska_block.gif" alt="aska system">
+   </td>
+   <td width="500" align="left">
+    <ul style="margin-top:2pt; margin-bottom:2pt;">
+     <li>PC
+     <ul style="margin-top:2pt; margin-bottom:2pt;">
+      <li>本体内：FA用CPUボード (PentiumIII 1GHz) 1台
+      <li>外　部：省スペースPC (Pentium4 2GHz) 3台
+      <ul style="margin-top:2pt; margin-bottom:2pt;">
+       <li>音声処理用 1台
+       <li>画像処理用 1台
+       <li>統括サーバー 1台
+      </ul>
+     </ul>
+     <li>自由度
+     <ul style="margin-top:2pt; margin-bottom:2pt;">
+      <li>頭部：8[DOF]
+      <li>胸部：1[DOF]
+      <li>腕部：7[DOF]×2
+      <li>手部：3[DOF]×2
+     </ul>
+     <li>センサ
+     <ul style="margin-top:2pt; margin-bottom:2pt;">
+      <li>マイクロフォン：1台
+      <li>カメラ：広角×2台，望遠×2台
+      <li>レーザ距離センサ：1台
+     </ul>
+    </ul>
+   </td>
+  </tr>
+  <tr>
+   <td width="500" align="center">
+    ソフトウェア構成<br>
+    <img src="https://robotics.naist.jp/~kento-ta/images/aska_soft.gif" alt="aska software">
+   </td>
+   <td width="500" align="center">
+ASKAには左図に示すソフトウェアモジュールが組み込まれており，サーバプロセスを介してソケット通信により相互に情報をやりとりしている．このうちの音声対話関連のモジュール（音声認識理解，音声合成）については音情報処理学講座が，またそれ以外のモジュール（胴体ジェスチャ，頭部ジェスチャ，人検出など）はロボティクス講座が開発を担当した．
+<br><br>
+これらのモジュールは，定められたプロトコルを用いてサーバプロセスとのメッセージ交換することで，他のモジュールとの協調作業を実現している．モジュールが互いに独立に動作するため，複雑な同期処理には向かないが，システムの開発を容易にできる．また，モジュール内に閉じた開発を行なえるため，新たな技術の組み込みを手軽に行なえるメリットがある．
+   </td>
+  </tr>
+ </table>
+</div>
+
+<div align="center">
+ <table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font color="#222222">実験の様子</font>
+   </td>
+  </tr>
+ </table>
+</div>
+
+<div align="center">
+ <table border=1>
+ <tbody>
+  <tr>
+   <td width="500" align="center">
+    対話の様子<br>
+    <div align="center">
+     <table width="100%" border="0" cellspacing="2" cellpadding="2">
+      <tr>
+       <td align="center">
+        <img src="https://robotics.naist.jp/~kento-ta/images/aska_pose1.jpg" alt="aska"><br>
+	<font size="1">『ロボティクス講座はA棟5階です』</font>
+       </td>
+       <td align="center">
+        <img src="https://robotics.naist.jp/~kento-ta/images/aska_pose2.jpg" alt="aska"><br>
+	<font size="1">『公衆電話は後ろ側にあります』</font>
+       </td>
+      </tr>
+     </table>
+    </div>
+   </td>
+   <td>
+    対話の様子<br>
+   </td>
+  </tr>
+  <tr>
+   <td width="500" align="center">
+    画像による人の認識<br>
+    <img src="https://robotics.naist.jp/~kento-ta/images/aska_vision.gif" alt="aska vision">
+   </td>
+   <td>
+ASKAの頭部に組み込まれた超小型カメラを用いて人の認識を行う．まず，広角カメラを用いて，三角測量の原理で距離を測り，距離画像を生成する．次に距離画像の中から，人らしい領域を切り出す．最後に頭部を人領域に向け，ユーザの顔，視線，口の動きを認識する．ユーザがASKAの顔を見ていると判断したときにのみ，音声に反応する．これにより，ASKAとユーザの（極めて単純ではあるが）アイ・コンタクトを実現した．
+   </td>
+  </tr>
+  <tr>
+   <td width="500" align="center">
+    画像による顔・視線の認識<br>
+    <img src="https://robotics.naist.jp/~kento-ta/images/aska_facetracking1.jpg" alt="aska face tracking">
+    <img src="https://robotics.naist.jp/~kento-ta/images/aska_facetracking2.jpg" alt="aska face tracking">
+   </td>
+   <td>
+ユーザがASKAの顔を見ながら話しかけている場合と，ASKAの顔を見ていない場合の視線認識結果．
+   </td>
+  </tr>
+ </table>
+</div>
+
+<!--
+<div align="center">
+ <table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font color="#222222">実験ビデオ</font>
+   </td>
+  </tr>
+ </table>
+</div>
+
+<div align="center">
+ <table border=2>
+ <tbody>
+  <tr>
+   <td><a href="indoor.mpg">屋内走行実験</a><br>(MPEG1, 7.8MB)</td>
+   <td><a href="outdoor.mpg">屋外走行実験</a><br>(MPEG1, 1.9MB)</td>
+   <td><a href="robofesta.mpg">ロボフェスタ関西・プレ大会</a><br>(MPEG1, 8.3MB)</td>
+  </tr>
+  <tr>
+   <td><a href="../../MOVIE/wchair/indoor.mpg"><img src="indoor.jpg" alt="indoor"></a></td>
+   <td><a href="../../MOVIE/wchair/outdoor.mpg"><img src="outdoor.jpg" alt="outdoor"></a></td>
+   <td><a href="../../MOVIE/wchair/robofesta.mpg"><img src="robofesta.jpg" alt="robofesta"></a></td>
+  </tr>
+ </table>
+</div>
+-->
+
+<div align="center">
+ <table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font color="#222222">メディアでの紹介</font>
+   </td>
+  </tr>
+ </table>
+</div>
+
+<div align="left">
+ <ul>
+  <li>2002.04.04 CNNテレビ<br>
+       ROBODEX2002特集
+  <li>2002.05 Newton 2002年6月号<br>
+       P127 コミュニケーション能力を得た-ASKA
+  <li>2002.09.11 NHK ニュースかんさい発<br>
+       2002奈良ウィーク「新・まほろば宣言」ASKAが番組アシスタントとして登場
+  <li>2003.03.25 朝日新聞 朝刊<br>
+       暮らしにロボット，人生のパートナー「ロボデックス2003」来月3月 横浜で開幕
+  <li>2003.04.07 Weeklyぴあ　関東版<br>
+       ROBODEX2003関連記事でASKAの紹介
+  <li>2003.04.24 日本テレビ スームイン!!SUPER<br>
+       「今日のイチオシ**ナマやねん!!**」
+ </ul>
+</div>
+
+<!--
+<div align="center">
+ <table border=2>
+ <tbody>
+  <tr>
+   <td><a href="takuro.mpg">辰巳さんも試乗</a><br>(MPEG1, 32秒, 2.3MB)</td>
+   <td><a href="news.mpg">ニュース</a><br>(MPEG1, 50秒, 3.7MB)</td>
+  </tr>
+  <tr>
+   <td><a href="takuro.mpg"><img src="wchair1.jpg" alt="movie1"></a></td>
+   <td><a href="news.mpg"><img src="wchair2.jpg" alt="movie2"></a></td>
+  </tr>
+ </table> 
+</div>
+-->
+
+<div align="center">
+ <table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font color="#222222">デモの記録</font>
+   </td>
+  </tr>
+ </table>
+</div>
+
+<div align="left">
+ <ul style="margin-top:2pt; margin-bottom:2pt;">
+  <li>ロボフェスタ生駒（2001年7月，奈良先端科学技術大学院大学）
+  <center>
+   <img src="robofestaikoma_aska1.jpg" alt="aska at robofesta ikoma">
+   <img src="robofestaikoma_aska2.jpg" alt="aska at robofesta ikoma">
+  </center>
+  <li>ROBODEX2002 （2002年3月，パシフィコ横浜）
+  <center>
+   <img src="robodex2002.jpg" alt="aska at robodex2002">
+   <img src="robodex2002_cnn.jpg" alt="aska at robodex2002">
+  </center>
+  <li>ROBODEX2003 （2003年4月，パシフィコ横浜）
+  <center>
+   <img src="robodex2003_booth.jpg" alt="aska at robodex2003">
+   <img src="robodex2003_aska.jpg" alt="aska at robodex2003">
+  </center>
+ </ul>
+</div>
+
+<div align="center">
+ <table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font COLOR="#222222">文献リスト</font>
+   </td>
+  </tr>
+ </table>
+</div>
+
+<div align="left">
+ <ol style="margin-top:2pt; margin-bottom:2pt;">
+  <li>西村 竜一, 李 晃伸, 猿渡 洋, 鹿野 清宏: "音声対話機能を持つ受付案内ロボットASKAの実装", 日本音響学会講演会講演論文集, pp.37-38,
+       1-5-9, 2002.
+  <li>怡土 順一, 松本 吉央, 西村 竜一, 李 晃伸: "受付案内ロボットASKA: 情報科学研究の実環境プラットフォーム", 日本機会学会ロボティクス・
+       メカトロニクス講演会'02講演論文集, 1A1-D12, 2002.
+  <li>明賀 陽平, 田合 弘幸, 松本 吉央, 小笠原 司: "受付案内ロボットASKAにおける画像を用いた人発見・追跡", 日本ロボット学会創立20周年記念学
+       術講演会予稿集, 1G33, 2002.
+  <li>Jun'ichi Ido, Kentaro Takemura, Yoshio Matsumoto and Tsukasa
+       Ogasawara: "Robotic Receptionist ASKA : A Research Platform for
+       Human-Robot Interaction", Proceedings of the 2002 IEEE
+       Int. Workshop on Robot and Human Interactive Communication
+       (ROMAN2002), pp.306-311, 2002.
+  <li>Ryuichi Nishimura, Takashi Uchida, Akinobu Lee, Hiroshi
+       Saruwatari, Kiyohiro Shikano and Yoshio Matsumoto: "ASKA:
+       Receptionist Robot System with Speech Dialogue System", Proc. of
+       2002 IEEE/RSJ Int. Conf. on Intelligent Robots and Systems
+       (IROS'02), pp.1314-1319, 2002.
+  <li>Jun'ichi Ido, Youhei Myouga, Yoshio Matsumoto and Tsukasa
+       Ogasawara: "Interaction of receptionist ASKA using vision and
+       speech information", Proc. of IEEE Conference on Multisensor Fusion and
+       Integration for Intelligent Systems (MFI2003), 2003. (to appear)
+ </ol>
+</div>
+
+<!--
+<div align="center">
+ <table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font COLOR="#222222">関連研究</font>
+   </td>
+  </tr>
+ </table>
+</div>
+
+<div align="left">
+ <ul style="margin-top:2pt; margin-bottom:2pt;">
+  <li>大阪大学・白井研究室 <a href="http://www-cv.mech.eng.osaka-u.ac.jp/research/hi-j.html">顔の視覚情報処理を用いた知的車椅子に関する研究</a>
+ </ul>
+</div>
+-->
+
+<div align="center">
+ <table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font color="#222222">研究メンバー</font>
+   </td>
+  </tr>
+ </table>
+</div>
+
+<div align="left">
+ 現在のメンバー：
+ <ul style="margin-top:2pt; margin-bottom:2pt;">
+  <li>塚谷浩司：ジェスチャ認識
+  <li>成松英一：人発見
+  <li>怡土順一：動作生成，画像処理
+  <li>池田篤俊：ロゴ作成
+  <li>小枝正直：メカ工作
+  <li>竹村憲太郎：メカ工作
+  <li>松本吉央
+  <li>李　晃伸（鹿野研）：音声認識
+  <li>西村竜一（鹿野研）：応答生成
+ </ul>
+ 
+ 過去のメンバー：
+ <ul style="margin-top:2pt; margin-bottom:2pt;">
+  <li>明賀陽平（2002年度修了）：発話区間の推定，アイ・コンタクト
+  <li>高橋倫久（2002年度修了）：頭部ジェスチャ
+  <li>鈴木征一郎（2002年度修了）：工作
+  <li>岩間博哉（2002年度修了）：工作
+  <li>後藤健志（2001年度修了）：距離センサによる人発見
+  <li>佐々木晋介（2001年度修了）：デザイン
+  <li>内田賢志（2002年度修了，鹿野研）：音声対話
+ </ul>
+</div>
+
+<div align="center">
+ <table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font color="#222222">協力</font>
+   </td>
+  </tr>
+ </table>
+</div>
+
+<div align="left">
+ <ul style="margin-top:2pt; margin-bottom:2pt;">
+  <li>通信総合研究所 <a href="http://www2.crl.go.jp/jt/a134/xkozima/indexj.html">小嶋 秀樹さん</a>（Infanoid の頭部の設計図および制御回路を提供して頂きました）
+  <li>産業総合研究所 原 功さん    （テムザック４用のデバイスドライバを提供して頂きました）
+  <li><a href="http://www.tmsuk.co.jp/">（株）テムザック</a>（テムザック４の内部情報を教えて頂きました）
+ </ul>
+</div>
+ 
+<div align="left">
+ <table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+   <td width="100%" bgcolor="#bbbbbb" align="center">
+    <font color="#222222">連絡先</font>
+   </td>
+  </tr>
+ </table>
+</div>
+
+<div align="left">
+松本吉央 (<img src="mail_address.gif" alt="mail address">)<br>
+<br>
+<a href="http://robotics.naist.jp">研究室トップへ戻る</a>
+</div>
+
+<div align="right">
+ <a href="http://validator.w3.org/check/referer"><img border="0" src="valid-html401.gif" alt="Valid HTML 4.01!" height="31" width="88"></a>
+</div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-414006-1";
+urchinTracker();
+</script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html> 
+<html> 
+<head> 
+<meta charset="UTF-8"> 
+<meta name="viewport" content_staff="width=device-width, initial-scale=1">
+<title>Robotics Lab</title> 
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+<script src="jquery.min.js"> </script> <!--ver 1.11.1-->
+
+<script>
+
+//Reload the page at a specific time
+function refreshAt(hours, minutes, seconds) {
+    var now = new Date();
+    var then = new Date();
+    if(now.getHours() > hours ||
+       (now.getHours() == hours && now.getMinutes() > minutes) ||
+        now.getHours() == hours && now.getMinutes() == minutes && now.getSeconds() >= seconds) {
+        then.setDate(now.getDate() + 1);
+    }
+    then.setHours(hours);
+    then.setMinutes(minutes);
+    then.setSeconds(seconds);
+    var timeout = (then.getTime() - now.getTime());
+    setTimeout(function() { window.location.reload(true); }, timeout);
+}
+// reload the page at 5am
+refreshAt(5,0,0);
+
+//global variables
+///TODO do a class to avoid global variables 
+var myLanguage = "ja";
+var x; //this is the member list
+
+// loads the xml file
+function loadDoc() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (xhttp.readyState == 4 && xhttp.status == 200) {
+        getMembersFromFile(xhttp);
+        }
+    };    
+    xhttp.open("GET", "members.xml?t=" + Math.random(), true); // random is to avoid cached data
+    xhttp.send();
+    }
+
+//reads the members from the xml file and generates the tables
+function getMembersFromFile(xml) {
+    var i;
+    var xmlDoc = xml.responseXML;        
+    var content_staff = '';   
+    var content_D = '';
+    var content_M2 = '';
+    var content_M1 = '';
+    var content_other = '';
+    x = xmlDoc.getElementsByTagName("member");    
+    for (i = 0; i <x.length; i++) {
+        var useThisClass = 'myButton';
+        if (x[i].getAttribute("category") == "STAFF") {
+            useThisClass = 'myButton staff';
+        }
+        var content = '<input type="button" onClick="switchState(this.id)" '
+        + 'class="' + useThisClass + '" ' 
+        + 'id="' + x[i].getElementsByTagName("id")[0].childNodes[0].nodeValue 
+        + '" value="' + x[i].getElementsByTagName("name_ja")[0].childNodes[0].nodeValue + '" />';        
+        if (x[i].getAttribute("category") == "STAFF") {
+            content_staff += content;
+        } else if (x[i].getAttribute("category") == "D") {
+            content_D += content;
+        } else if (x[i].getAttribute("category") == "M2") {
+            content_M2 += content;
+        } else if (x[i].getAttribute("category") == "M1") {
+            content_M1 += content;
+        }else if (x[i].getAttribute("category") == "OTHER") {
+            content_other += content;
+        } ///TODO output error if unknown category
+    }    
+    document.getElementById("staffmembers").innerHTML = content_staff;
+    document.getElementById("Dmembers").innerHTML = content_D;
+    document.getElementById("M2members").innerHTML = content_M2;
+    document.getElementById("M1members").innerHTML = content_M1;
+    document.getElementById("othermembers").innerHTML = content_other;
+    }
+
+// toggles language
+function changeLang() {
+    //update the current language
+    if(myLanguage == "ja") {
+        myLanguage = "en";
+    } else {
+        myLanguage = "ja";
+    }    
+    // switch the language of all members
+    var elems = document.getElementsByClassName("myButton");
+    for(var i=0; i<elems.length; ++i) {
+        if(myLanguage=="en") {            
+            elems[i].value = x[i].getElementsByTagName("name_en")[0].childNodes[0].nodeValue;
+        } else {
+            elems[i].value = x[i].getElementsByTagName("name_ja")[0].childNodes[0].nodeValue;    
+        }        
+    }    
+    //switch the language button icon
+    var flag = document.getElementById("langButton");
+    if(myLanguage == "en") {
+        flag.src = "./japanese.png";
+    } else {
+        flag.src = "./english.png";
+    }    
+}
+
+//switch the present/absent state
+function switchState(clicked_id) {
+    var myElement = document.getElementById(clicked_id);
+    $(myElement).toggleClass("inthelab");
+}
+
+// to load the document at the beginning (defaults to Japanese)
+loadDoc();
+
+</script>
+</head>
+
+<body>  
+  <div class="main-container">      
+      <div class="category_container">
+          <div class="category_name"><center><strong>Staff</strong></center></div>
+          <div id="staffmembers" class="membersdiv"></div>
+      </div>
+      <div class="category_container" style="background-color: #e0e0e0">
+          <div class="category_name"><center><strong>D</strong></center></div>
+          <div id="Dmembers" class="membersdiv"></div>
+      </div>
+      <div class="category_container">
+          <div class="category_name"><center><strong>M2</strong></center></div>
+          <div id="M2members" class="membersdiv"></div>
+      </div>
+      <div class="category_container" style="background-color: #e0e0e0">
+          <div class="category_name"><center><strong>M1</strong></center></div>
+          <div id="M1members" class="membersdiv"></div>
+      </div>
+      <div class="category_container">
+          <div class="category_name"><center><strong>Other</strong></center></div>
+          <div id="othermembers" class="membersdiv"></div>
+      </div>
+      <div class="language_div">        
+        <input id="langButton" type="image" src="./english.png" class="language_button" onClick="changeLang()"/>
+      </div>                      
+  </div>
+</body>
+
+</html>

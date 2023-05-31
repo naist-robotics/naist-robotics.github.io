@@ -1,0 +1,68 @@
+.main-container
+{
+	float: left;
+  width: 1260px;
+  height: 665px;
+  margin: 0px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(0,0,0,.2);    
+  background-color:#FFFFFF;  
+  font-family:arial;
+	font-size:30px;  
+}
+.myButton {
+	background-color:gray;	
+	-moz-border-radius:28px;
+	-webkit-border-radius:28px;
+	border-radius:28px;
+	border:1px solid gray;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:arial;
+	font-size:23px;	
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+	width: 188px; 
+	height: 60px; 
+  margin-top: 3px;
+  margin-bottom: 3px;
+  margin-right: 2px;
+  margin-left: 2px;
+}
+.myButton.staff {
+  width: 285px;	
+}
+.myButton.inthelab {
+	background-color:#5cbf2a;
+	border:1px solid #18ab29;
+}
+.category_container {
+  display: flex;
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical */
+}
+.category_name {
+  /*background-color: cornflowerblue;*/ /*debug*/    
+  width: 8%;  
+  float: left;   
+}
+.membersdiv {
+  /*background-color:darkorange;*/ /*debug*/
+  width: 92%; 
+  float: right;  
+}
+
+.language_div {
+  position: relative;
+  bottom: 60px; /*has to be the same height of the button*/
+  right:0;
+  float: right;
+}
+
+.language_button {  
+	cursor:pointer;
+	color:#ffffff;		
+	height: 60px;
+}

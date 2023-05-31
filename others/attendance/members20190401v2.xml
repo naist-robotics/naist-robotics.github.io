@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<lab>
+    <!--Staff members-->
+    <member category="STAFF">
+        <id>ogasawar</id>
+        <name_ja>教授 小笠原 司</name_ja>
+        <name_en>Prof. Ogasawara</name_en>
+    </member>
+    <member category="STAFF">
+        <id>j-taka</id>
+        <name_ja>准教授　高松 淳</name_ja>
+        <name_en>Assoc. Prof. Takamatsu</name_en>
+    </member>
+    <member category="STAFF">
+        <id>ding</id>
+        <name_ja>助教 丁 明</name_ja>
+        <name_en>Assist. Prof. Ding</name_en>
+    </member>
+    <member category="STAFF">
+        <id>garcia-g</id>
+        <name_ja>助教 タボ</name_ja>
+        <name_en>Assist. Prof. Tavo</name_en>
+    </member>
+    <!--<member category="STAFF">
+        <id>yoshikawa-m</id>
+        <name_ja>研究協力者　吉川 雅博</name_ja>
+        <name_en>Assist. Prof. Yoshikawa</name_en>
+    </member>-->
+    <member category="STAFF">
+        <id>michiyo</id>
+        <name_ja>秘書　大脇 美千代</name_ja>
+        <name_en>Sec. Owaki</name_en>
+    </member>
+    <member category="STAFF">
+        <id>miki-i</id>
+        <name_ja>秘書　池田 美輝</name_ja>
+        <name_en>Sec. Ikeda</name_en>
+    </member>
+
+    <!--Doctor students-->
+    <member category="D">
+        <id>hakamata</id>
+        <name_ja>袴田</name_ja>
+        <name_en>Hakamata</name_en>
+    </member>
+    <member category="D">
+        <id>yamazaki</id>
+        <name_ja>山崎</name_ja>
+        <name_en>Yamazaki</name_en>
+    </member>
+    <member category="D">
+        <id>viktor</id>
+        <name_ja>ビクター</name_ja>
+        <name_en>Viktor</name_en>
+    </member>
+    <member category="D">
+        <id>Cho</id>
+        <name_ja>趙</name_ja>
+        <name_en>Cho</name_en>
+    </member>
+    <member category="D">
+        <id>Yuguchi</id>
+        <name_ja>湯口</name_ja>
+        <name_en>Yuguchi</name_en>
+    </member>
+    <member category="D">
+        <id>jiro-ni</id>
+        <name_ja>新田</name_ja>
+        <name_en>Nitta</name_en>
+    </member>
+    <member category="D">
+        <id>Kiyokawa</id>
+        <name_ja>清川</name_ja>
+        <name_en>Kiyokawa</name_en>
+    </member>
+    <member category="D">
+        <id>Shirakura</id>
+        <name_ja>白倉</name_ja>
+        <name_en>Shirakura</name_en>
+    </member>
+    <member category="D">
+        <id>pedro</id>
+        <name_ja>ペドロ</name_ja>
+        <name_en>Pedro</name_en>
+    </member>
+    <member category="D">
+        <id>masahiro-f</id>
+        <name_ja>藤田</name_ja>
+        <name_en>Fujita</name_en>
+    </member>
+
+    <!--M2 students-->
+
+    <member category="M2">
+        <id>Li Feiran</id>
+        <name_ja>フェイラン</name_ja>
+        <name_en>Feiran</name_en>
+    </member>
+
+    <member category="M2">
+        <id>hiroki-kt</id>
+        <name_ja>片山</name_ja>
+        <name_en>Katayama</name_en>
+    </member>
+
+    <member category="M2">
+        <id>tetsuya-ku</id>
+        <name_ja>倉角</name_ja>
+        <name_en>Kurasumi</name_en>
+    </member>
+    
+    <member category="M2">
+        <id>kento-ta</id>
+        <name_ja>田力</name_ja>
+        <name_en>Tariki</name_en>
+    </member>
+    
+    <member category="M2">
+        <id>tomoki-na</id>
+        <name_ja>永谷</name_ja>
+        <name_en>Nagatani</name_en>
+    </member>
+    
+    
+    <member category="M2">
+        <id>mikihisa-n</id>
+        <name_ja>永島</name_ja>
+        <name_en>Nagashima</name_en>
+    </member>
+    
+    
+    <member category="M2">
+        <id>tomoko-yui</id>
+        <name_ja>由井</name_ja>
+        <name_en>Yui</name_en>
+    </member>
+    
+    <member category="M2">
+        <id>ziyu-wa</id>
+        <name_ja>ジユ</name_ja>
+        <name_en>Ziyu</name_en>
+    </member>
+    
+    <member category="M2">
+        <id>pattaraporn-t</id>
+        <name_ja>パッタラポン</name_ja>
+        <name_en>Pattaraporn</name_en>
+    </member>
+    
+    <member category="M2">
+        <id>xin-ch</id>
+        <name_ja>シン</name_ja>
+        <name_en>Xin</name_en>
+    </member>
+
+
+    <!--M1 students-->
+
+    <!--other members-->
+    <member category="OTHER">
+        <id>test</id>
+        <name_ja>ブンヤポン</name_ja>
+        <name_en>Bunyapon</name_en>
+    </member>
+</lab>
