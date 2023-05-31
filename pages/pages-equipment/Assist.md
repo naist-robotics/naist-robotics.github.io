@@ -29,7 +29,7 @@ permalink: "/Research/equipment/Assist/"
 </div>
 <br/>
 <br/>
-<a href="http://atoun.co.jp/">ATOUN</a>が販売するMcKibben型空気圧人工筋を使用し，本研究室で製作したパワーアシストスーツです．
+ATOUNが販売するMcKibben型空気圧人工筋を使用し，本研究室で製作したパワーアシストスーツです．
 
 人の運動における筋力を補助する装置です．
 

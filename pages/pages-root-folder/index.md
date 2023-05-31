@@ -9,20 +9,6 @@ header:
   logo: logo.jpg
   image_fullwidth: topimg_200907.jpg
 
-
-
-widget2:
-  title: "Robotics text"
-  url: 'http://robotics.naist.jp/edu/text/'
-  image: RoboticsText.jpg
-  text: ''
-
-#widget3:
-#  title: "IT-Triadic: サイバーメディア社会におけるマルチスペシャリスト育成プログラム"
-#  url: 'https://it3.naist.jp/'
-#  image: RT-logo3s.jpg
-#  text: ''
-
 #
 # Use the call for action to show a button on the frontpage
 #

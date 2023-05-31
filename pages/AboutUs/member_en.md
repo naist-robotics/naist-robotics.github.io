@@ -23,7 +23,7 @@ ___
 #### Doctor Students
 ___
 
-|**D3** | <a href="https://sites.google.com/view/akishige-yuguchi-website/">Akishige YUGUCHI</a> | <a href="https://takuya-ki.github.io/">Takuya KIYOKAWA</a> | <!--<a href="http://robotics.naist.jp/~naoki-sh/">-->Naoki SHIRAKURA<!--</a>--> | Pedro Miguel URIGUEN ELJURI |
+|**D3** | <a href="https://sites.google.com/view/akishige-yuguchi-website/">Akishige YUGUCHI</a> | <a href="https://takuya-ki.github.io/">Takuya KIYOKAWA</a> | Naoki SHIRAKURA | Pedro Miguel URIGUEN ELJURI |
 |**D2** | Masanori FUJITA
 |**D1** | Tatsuya SAKUMA |　Tomoko YUI |  Pattaraporn TULATHUM |  |   |
 

@@ -23,7 +23,7 @@ ___
 #### 博士課程
 ___
 
-|**D3** | <a href="https://sites.google.com/view/akishige-yuguchi-website">湯口 彰重</a> |<a href="https://takuya-ki.github.io/">清川 拓哉</a> | <!--<a href="http://robotics.naist.jp/~naoki-sh/">-->白倉 尚貴<!--</a>--> | URIGUEN Pedro |
+|**D3** | <a href="https://sites.google.com/view/akishige-yuguchi-website">湯口 彰重</a> |<a href="https://takuya-ki.github.io/">清川 拓哉</a> | 白倉 尚貴 | URIGUEN Pedro |
 |**D2** | 藤田 正弘 |
 |**D1** | 佐久間 達也 | 由井 朋子 | TULATHUM Pattaraporn |   |   |
 

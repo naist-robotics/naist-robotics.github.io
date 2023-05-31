@@ -277,9 +277,6 @@ ___
 
  <p>前期課程修了生</p>
 
-<!--
-      - <a href="http://robotics.naist.jp/~ayumi-h/">羽田野 あゆみ
--->
 - 瀧 大補
 - 栗本 敏明
 - 小橋 優司
@@ -444,7 +441,6 @@ ___
 <p>後期課程終了生</p>
 
 - 上田 悦子
-<!--      - <a href="https://robotics.naist.jp/member/old_members/2003/hirosh-t/index.html">竹村 裕 -->
 - 竹村 裕
      <br/>
  <p>前期課程終了生</p>
