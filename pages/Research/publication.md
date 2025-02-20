@@ -8,22 +8,61 @@ header:
 permalink: "/Research/publications/"
 ---
 
-## <a href="{{ site.url }}{{ site.baseurl }}/Research/publication/2023-j/">2023年</a>
+## <a href="{{ site.url }}{{ site.baseurl }}/Research/publication/2023-j/">2024年</a>
 ### 発表論文
 #### 学術論文誌
 
-- Tomoki Ishikura, Yuki Kitamura, Wataru Sato, Jun Takamatsu, Akishige Yuguchi, Sung-Gwo Cho, Ming Ding, Sakiko Yoshikawa, and Tsukasa Ogasawara:&nbsp;&ldquo;Pleasant Stroke Touch on Human Back by a Human and a Robot&rdquo;, Sensors,
-  vol.&nbsp;23, issue.&nbsp;3, no.&nbsp;1136, pp.&nbsp;1-11, 2023.
-[&nbsp;<a href="{{ site.url }}{{ site.baseurl }}/others/bib2023/ishikura_sensors2023_bib.html#ishikura_sensors2023">bib</a>&nbsp;| 
-<a href="http://dx.doi.org/10.3390/s23031136">DOI</a>&nbsp;]
-
 #### 国際会議
+- Akishige Yuguchi, Mayuki Toyoda, Sung-Gwi Cho, Atsushi Nakazawa, Jun Takamatsu, Koichiro Yoshino, and Tsukasa Ogasawara:&nbsp;&ldquo;Capturing Contact Surfaces by a Frustrated Total Internal Reflection System Using a Curved Plate for Comparison of the Beginning of Touching Motions by Humanitude Experts and Novices,&rdquo; the 2024 IEEE International Conference on Systems, Man, and Cybernetics (SMC 2024), pp.:&nbsp;679-684, 2024.
+[<a href="http://dx.doi.org/10.1109/10.1109/SMC54092.2024.10831793">DOI</a>&nbsp;]
+
+- Akishige Yuguchi, Tomoki Ishikura, Sung-Gwi Cho, Jun Takamatsu, and Tsukasa Ogasawara:&nbsp;&ldquo;Robotic Stroke Motion Following the Shape of the Human Back: Motion Generation and Psychological Effects,:&rdquo; the ICRA 2024 Workshop on Nursing Robotics, no. 33, 2024.
+
 #### 研究会/全国大会
+- 湯口彰重, 豊田真行, 趙崇貴, 高松淳, 小笠原司:&nbsp;&ldquo;ユマニチュードの触れ始めにおける手のひら全体の接触力の計測の試み&rdquo;, 電子情報通信学会HCGシンポジウム2024, P-3-10, 2024.
+
+- 石倉智貴, 湯口彰重, 趙崇貴, 高松淳, 小笠原司:&nbsp;&ldquo;背中の形状に沿ったロボットアームによる撫で動作の生成とその心理的効果&rdquo;, 日本機械学会ロボティクス・メカトロニクス講演会2024（ROBOMECH 2024）, 2P2-D09, 2024．
 
 #### Technical Report
 ### 解説・総説
 ### 著書・編書・翻訳書
 ### 受賞
+- 豊田真行, 湯口彰重, 趙崇貴, 佐藤勇起, 高松淳, 中澤篤志, 和田隆広, 小笠原司:&ldquo;日本機械学会ロボティクス・メカトロニクス部門2024年度分野融合研究優秀表彰&rdquo;, 2024.
+
+## <a href="{{ site.url }}{{ site.baseurl }}/Research/publication/2023-j/">2023年</a>
+### 発表論文
+#### 学術論文誌
+- Tomoki Ishikura, Wataru Sato, Jun Takamatsu, Akishige Yuguchi, Sung-Gwi Cho, Ming Ding, Sakiko Yoshikawa, and Tsukasa Ogasawara:&nbsp;&ldquo;Delivery of pleasant stroke touch via robot in older adults,&rdquo; Frontiers in Psychology, vol.&nbsp;14, no.&nbsp;1292178, pp.&nbsp;1-8, 2024.
+[<a href="https://doi.org/10.3389/fpsyg.2023.1292178">DOI</a>&nbsp;]
+
+- 湯口彰重, 豊田真行, 趙崇貴, 吉野幸一郎, 高松淳, 中澤篤志, 小笠原司:&nbsp;&ldquo;曲面板を用いた赤外線漏れ全反射方式でのユマニチュードの触れ始めの解析のための接触面情報の取得&rdquo;, 日本ロボット学会誌, vol.&nbsp;41, no.&nbsp;10, pp.&nbsp;893-896, 2023.
+[<a href="https://doi.org/10.7210/jrsj.41.893">DOI</a>&nbsp;]
+
+- Tatsuya Sakuma, Takuya Kiyokawa, Takamitsu Matsubara, Jun Takamatsu, Takahiro Wada, and Tsukasa Ogasawara:&nbsp;Jamming Gripper-Inspired Soft Jig for Perceptive Parts Fixing
+&ldquo;&rdquo;, IEEE Access,
+  vol.&nbsp;11, pp. 62187-62199, 2023.
+[<a href="http://dx.doi.org/10.1109/ACCESS.2023.3285810">DOI</a>&nbsp;]
+
+- Tomoki Ishikura, Yuki Kitamura, Wataru Sato, Jun Takamatsu, Akishige Yuguchi, Sung-Gwo Cho, Ming Ding, Sakiko Yoshikawa, and Tsukasa Ogasawara:&nbsp;&ldquo;Pleasant Stroke Touch on Human Back by a Human and a Robot,&rdquo; Sensors,
+  vol.&nbsp;23, issue.&nbsp;3, no.&nbsp;1136, pp.&nbsp;1-11, 2023.
+[&nbsp;<a href="{{ site.url }}{{ site.baseurl }}/others/bib2023/ishikura_sensors2023_bib.html#ishikura_sensors2023">bib</a>&nbsp;| 
+<a href="http://dx.doi.org/10.3390/s23031136">DOI</a>&nbsp;]
+
+
+#### 国際会議
+- Satoki Tsuichihara, Masayuki Yamada, Kaito Hara, Gustavo A. Garcia Ricardez, Akishige Yuguchi, Jun Takamatsu, Takahiro Wada, Yasutake Takahashi, and Tsukasa Ogasawara:&nbsp;&ldquo;Holding Strategy Using Torso to Enable Humanoid Robots to Carry Heavier Objects,&rdquo; the 2024 IEEE/SICE International Symposium on System Integration (SII 2024), pp.&nbsp;1464-1469, 2024.
+[<a href="http://dx.doi.org/10.1109/SII58957.2024.10417696">DOI</a>&nbsp;]
+
+#### 研究会/全国大会
+- 湯口彰重, 中澤篤志, 吉野幸一郎, 趙崇貴, 高松淳, 小笠原司:&nbsp;&ldquo;赤外線漏れ全反射方式の接触面を通したユマニチュードの熟練者と初学者による触れ始めの比較&rdquo;, 第24回計測自動制御学会システムインテグレーション部門講演会（SI2023）, pp. 591-595, 2023.
+
+- 豊田真行, 湯口彰重, 趙崇貴, 佐藤勇起, 高松淳, 中澤篤志, 和田隆広, 小笠原司:&nbsp;&ldquo;ユマニチュードの触れ始めを再現するロボットハンド&rdquo;, 日本機械学会ロボティクス・メカトロニクス講演会2023（ROBOMECH 2023）, 1A2-C18, 2023.
+
+#### Technical Report
+### 解説・総説
+### 著書・編書・翻訳書
+### 受賞
+- 湯口彰重, 中澤篤志, 吉野幸一郎, 趙崇貴, 高松淳, 小笠原司:&ldquo;SI2023　優秀講演賞,&rdquo; 第24回計測自動制御学会システムインテグレーション部門講演会（SI2023）, 2023.
 
 
 ## <a href="{{ site.url }}{{ site.baseurl }}/Research/publication/2022-j/">2022年</a>
@@ -34,7 +73,20 @@ permalink: "/Research/publications/"
 [&nbsp;<a href="{{ site.url }}{{ site.baseurl }}/others/bib2022/yui_ieee_access2022_bib.html#yui_ieee_access2022">bib</a>&nbsp;| 
 <a href="http://dx.doi.org/10.1109/ACCESS.2022.3221751">DOI</a>&nbsp;]
 
-- 吉本幸太郎, 清川拓哉, 高松淳, 和田隆広, 小笠原 司:&nbsp;&ldquo;リサイクルロボットのための熱画像による密集した容器包装廃棄物の分類&rdquo;, 日本ロボット学会誌,
+- Tatsuhiro Wakayama, Eri Fujiura, Mari Yamaguchi, Naoki Yoshida, Tomoaki Inoue, Hiroki Ikeuchi, Masaki Yamamoto, Lotfi El Hafi, Gustavo A. Garcia Ricardez, Jun Takamatsu, Tadahiro Taniguchi, and Tsukasa Ogasawara:&nbsp;&ldquo;
+Versatile cleaning service robot based on a mobile manipulator with tool switching for liquids and garbage removal in restrooms,&rdquo; Advanced Robotics,
+  vol.&nbsp;36, no.&nbsp;17-18, pp. 967-981, 2022. 
+[<a href="https://doi.org/10.1080/01691864.2022.2109430">DOI</a>&nbsp;]
+
+- Pattaraporn Tulathum, Bunyapon Usawalertkamol, Gustavo Alfonso Garcia Ricardez, Jun Takamatsu, Tsukasa Ogasawara, and Kenichi Matsumoto:&nbsp;&ldquo;Robot behavior debugger for non-expert users in convenience stores using behavior trees,&rdquo; Advanced Robotics,
+  vol.&nbsp;36, no.&nbsp;17-18, pp. 951-966, 2022. 
+[<a href="https://doi.org/10.1080/01691864.2022.2115316">DOI</a>&nbsp;]
+
+- Gustavo A. Garcia Ricardez, Pedro M. Uriguen Eljuri, Yuta Kamemura, Shiori Yokota, Noriyuki Kugou, Yoshitatsu Asama, Ziyu Wang, Hikaru Kumamoto, Kotaro Yoshimoto, Wai Y Chan, Tomoki Nagatani, Pattaraporn Tulathum, Bunyapon Usawalertkamol, Lotfi El Hafi, Hiroki Ikeuchi, Masaki Yamamoto, Jun Takamatsu, Tadahiro Taniguchi, and Tsukasa Ogasawara:&nbsp;&ldquo;Autonomous service robot for human-aware restock, straightening and disposal tasks in retail automation,&rdquo; Advanced Robotics,
+  vol.&nbsp;36, no.&nbsp;17-18, pp. 936-950, 2022. 
+[<a href="https://doi.org/10.1080/01691864.2022.2109429">DOI</a>&nbsp;]
+
+- 吉本幸太郎, 清川拓哉, 高松淳, 和田隆広, 小笠原司:&nbsp;&ldquo;リサイクルロボットのための熱画像による密集した容器包装廃棄物の分類&rdquo;, 日本ロボット学会誌,
   vol.&nbsp;40, no.&nbsp;6, pp. 538-541, 2022.
 [&nbsp;<a href="{{ site.url }}{{ site.baseurl }}/others/bib2022/yoshimoto_jrsj2022_bib.html#yoshimoto_jrsj2022">bib</a>&nbsp;| 
 <a href="http://dx.doi.org/10.7210/jrsj.40.538">DOI</a>&nbsp;]
