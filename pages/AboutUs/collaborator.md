@@ -9,7 +9,7 @@ permalink: "/AboutUs/collaborator/"
 ---
 
 
-#### 研究協力者
+#### 研究協力者（2020年度現在）
 ___
 
 | <a href="https://www.kindai.ac.jp/sci/education/faculty_and_research/rewrite.php?name=06_ikeda_atsutoshi">池田 篤俊</a> | <a href="https://www.kindai.ac.jp/">近畿大学</a> <a href="https://www.kindai.ac.jp/sci/">理工学部</a> <a href="https://www.kindai.ac.jp/sci/department/mechanical_engineering.html">機械工学科</a> <a href="http://srl.mec.kindai.ac.jp/">センシング学研究室</a> 講師 |   

@@ -9,7 +9,7 @@ permalink: "/AboutUs/collaborator_en/"
 ---
 
 
-#### Collaborators
+#### Collaborators (FY2020)
 ___
 
 | <a href="https://lotfielhafi.com/">Lotfi EL HAFI</a> | Research Assistant,Ritsumeikan Global Innovation Research,Ritsumeikan University |   

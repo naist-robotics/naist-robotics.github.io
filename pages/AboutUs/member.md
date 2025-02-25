@@ -12,9 +12,9 @@ permalink: "/AboutUs/member/"
 #### スタッフ
 ___
 
-|**教授** | <a href="https://robotics.naist.jp/members/ogasawar/">小笠原 司</a> |
-|**准教授** | <a href="https://robotics.naist.jp/members/j-taka/">高松 淳</a> |
-|**助教** | <a href="https://robotics.naist.jp/members/garcia-g/">GARCIA Gustavo</a> |
+|**教授** | 小笠原 司 |
+|**准教授** | <a href="https://j-taka.github.io/">高松 淳</a> |
+|**助教** | GARCIA Gustavo |
 |**助教** | <a href="https://sungi-ch.github.io/">趙 崇貴</a> |
 |**客員准教授** |　<a href="http://www.dingming.info/">丁 明</a> |
 |**秘書** | 大脇 美千代  | 池田 美輝  |
@@ -23,7 +23,7 @@ ___
 #### 博士課程
 ___
 
-|**D3** | <a href="https://sites.google.com/view/akishige-yuguchi-website">湯口 彰重</a> |<a href="https://takuya-ki.github.io/">清川 拓哉</a> | 白倉 尚貴 | URIGUEN Pedro |
+|**D3** | <a href="https://sites.google.com/view/akishige-yuguchi-website">湯口 彰重</a> |<a href="https://takuya-ki.github.io/">清川 拓哉</a> | <a href="https://naoki-sh.github.io/">白倉 尚貴</a> | <a href="https://pedrouriguen.com/">URIGUEN Pedro</a> |
 |**D2** | 藤田 正弘 |
 |**D1** | 佐久間 達也 | 由井 朋子 | TULATHUM Pattaraporn |   |   |
 

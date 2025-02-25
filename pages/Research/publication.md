@@ -8,7 +8,7 @@ header:
 permalink: "/Research/publications/"
 ---
 
-## <a href="{{ site.url }}{{ site.baseurl }}/Research/publication/2023-j/">2024年</a>
+## 2024年
 ### 発表論文
 #### 学術論文誌
 
@@ -29,7 +29,7 @@ permalink: "/Research/publications/"
 ### 受賞
 - 豊田真行, 湯口彰重, 趙崇貴, 佐藤勇起, 高松淳, 中澤篤志, 和田隆広, 小笠原司:&ldquo;日本機械学会ロボティクス・メカトロニクス部門2024年度分野融合研究優秀表彰&rdquo;, 2024.
 
-## <a href="{{ site.url }}{{ site.baseurl }}/Research/publication/2023-j/">2023年</a>
+## 2023年
 ### 発表論文
 #### 学術論文誌
 - Tomoki Ishikura, Wataru Sato, Jun Takamatsu, Akishige Yuguchi, Sung-Gwi Cho, Ming Ding, Sakiko Yoshikawa, and Tsukasa Ogasawara:&nbsp;&ldquo;Delivery of pleasant stroke touch via robot in older adults,&rdquo; Frontiers in Psychology, vol.&nbsp;14, no.&nbsp;1292178, pp.&nbsp;1-8, 2024.
@@ -65,7 +65,7 @@ permalink: "/Research/publications/"
 - 湯口彰重, 中澤篤志, 吉野幸一郎, 趙崇貴, 高松淳, 小笠原司:&ldquo;SI2023　優秀講演賞,&rdquo; 第24回計測自動制御学会システムインテグレーション部門講演会（SI2023）, 2023.
 
 
-## <a href="{{ site.url }}{{ site.baseurl }}/Research/publication/2022-j/">2022年</a>
+## 2022年
 ### 発表論文
 #### 学術論文誌
 - Tomoko Yui, Sung-Gwi Cho, Yuki Sato, Yasuaki Orita, Ming Ding, Jun Takamatsu, Takahiro Wada, and Tsukasa Ogasawara:&nbsp;&ldquo;Evaluation of Hand-Scaling Skills of Dental Hygienist Students: Identification of Contact Between Hand-Scaler Blade Tip and Tooth Surface&rdquo;, IEEE Access,

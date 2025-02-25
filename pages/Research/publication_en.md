@@ -7,8 +7,30 @@ header:
    image_fullwidth: press.jpg
 permalink: "/Research/publications_en/"
 ---
-## <a href="{{ site.url }}{{ site.baseurl }}/Research/publication/2023-j_en/">2023</a>
+## 2024
 #### Journals
+
+#### Conferences
+- Akishige Yuguchi, Mayuki Toyoda, Sung-Gwi Cho, Atsushi Nakazawa, Jun Takamatsu, Koichiro Yoshino, and Tsukasa Ogasawara:&nbsp;&ldquo;Capturing Contact Surfaces by a Frustrated Total Internal Reflection System Using a Curved Plate for Comparison of the Beginning of Touching Motions by Humanitude Experts and Novices,&rdquo; the 2024 IEEE International Conference on Systems, Man, and Cybernetics (SMC 2024), pp.:&nbsp;679-684, 2024.
+[<a href="http://dx.doi.org/10.1109/10.1109/SMC54092.2024.10831793">DOI</a>&nbsp;]
+
+- Akishige Yuguchi, Tomoki Ishikura, Sung-Gwi Cho, Jun Takamatsu, and Tsukasa Ogasawara:&nbsp;&ldquo;Robotic Stroke Motion Following the Shape of the Human Back: Motion Generation and Psychological Effects,:&rdquo; the ICRA 2024 Workshop on Nursing Robotics, no. 33, 2024.
+
+#### Technical Report
+### Books
+### Awards
+
+
+## 2023
+#### Journals
+
+- Tomoki Ishikura, Wataru Sato, Jun Takamatsu, Akishige Yuguchi, Sung-Gwi Cho, Ming Ding, Sakiko Yoshikawa, and Tsukasa Ogasawara:&nbsp;&ldquo;Delivery of pleasant stroke touch via robot in older adults,&rdquo; Frontiers in Psychology, vol.&nbsp;14, no.&nbsp;1292178, pp.&nbsp;1-8, 2024.
+[<a href="https://doi.org/10.3389/fpsyg.2023.1292178">DOI</a>&nbsp;]
+
+- Tatsuya Sakuma, Takuya Kiyokawa, Takamitsu Matsubara, Jun Takamatsu, Takahiro Wada, and Tsukasa Ogasawara:&nbsp;&ldquo;Jamming Gripper-Inspired Soft Jig for Perceptive Parts Fixing,
+&rdquo; IEEE Access,
+  vol.&nbsp;11, pp. 62187-62199, 2023.
+[<a href="http://dx.doi.org/10.1109/ACCESS.2023.3285810">DOI</a>&nbsp;]
 
 - Tomoki Ishikura, Yuki Kitamura, Wataru Sato, Jun Takamatsu, Akishige Yuguchi, Sung-Gwo Cho, Ming Ding, Sakiko Yoshikawa, and Tsukasa Ogasawara:&nbsp;&ldquo;Pleasant Stroke Touch on Human Back by a Human and a Robot&rdquo;, Sensors,
   vol.&nbsp;23, issue.&nbsp;3, no.&nbsp;1136, pp.&nbsp;1-11, 2023.
@@ -16,17 +38,33 @@ permalink: "/Research/publications_en/"
 <a href="http://dx.doi.org/10.3390/s23031136">DOI</a>&nbsp;]
 
 #### Conferences
+- Satoki Tsuichihara, Masayuki Yamada, Kaito Hara, Gustavo A. Garcia Ricardez, Akishige Yuguchi, Jun Takamatsu, Takahiro Wada, Yasutake Takahashi, and Tsukasa Ogasawara:&nbsp;&ldquo;Holding Strategy Using Torso to Enable Humanoid Robots to Carry Heavier Objects,&rdquo; the 2024 IEEE/SICE International Symposium on System Integration (SII 2024), pp.&nbsp;1464-1469, 2024.
+[<a href="http://dx.doi.org/10.1109/SII58957.2024.10417696">DOI</a>&nbsp;]
+
 #### Technical Report
 ### Books
 ### Awards
 
 
-## <a href="{{ site.url }}{{ site.baseurl }}/Research/publication/2022-j_en/">2022</a>
+## 2022
 #### Journals
 - Tomoko Yui, Sung-Gwi Cho, Yuki Sato, Yasuaki Orita, Ming Ding, Jun Takamatsu, Takahiro Wada, and Tsukasa Ogasawara:&nbsp;&ldquo;Evaluation of Hand-Scaling Skills of Dental Hygienist Students: Identification of Contact Between Hand-Scaler Blade Tip and Tooth Surface&rdquo;, IEEE Access,
   vol.&nbsp;10, pp. 120640-120649, 2022.
 [&nbsp;<a href="{{ site.url }}{{ site.baseurl }}/others/bib2022/yui_ieee_access2022_bib.html#yui_ieee_access2022">bib</a>&nbsp;| 
-<a href="http://dx.doi.org/10.1109/ACCESS.2022.3221751">DOI</a>&nbsp;]
+h<a href="http://dx.doi.org/10.1109/ACCESS.2022.3221751">DOI</a>&nbsp;]
+
+- Tatsuhiro Wakayama, Eri Fujiura, Mari Yamaguchi, Naoki Yoshida, Tomoaki Inoue, Hiroki Ikeuchi, Masaki Yamamoto, Lotfi El Hafi, Gustavo A. Garcia Ricardez, Jun Takamatsu, Tadahiro Taniguchi, and Tsukasa Ogasawara:&nbsp;&ldquo;
+Versatile cleaning service robot based on a mobile manipulator with tool switching for liquids and garbage removal in restrooms,&rdquo; Advanced Robotics,
+  vol.&nbsp;36, no.&nbsp;17-18, pp. 967-981, 2022. 
+[<a href="https://doi.org/10.1080/01691864.2022.2109430">DOI</a>&nbsp;]
+
+- Pattaraporn Tulathum, Bunyapon Usawalertkamol, Gustavo Alfonso Garcia Ricardez, Jun Takamatsu, Tsukasa Ogasawara, and Kenichi Matsumoto:&nbsp;&ldquo;Robot behavior debugger for non-expert users in convenience stores using behavior trees,&rdquo; Advanced Robotics,
+  vol.&nbsp;36, no.&nbsp;17-18, pp. 951-966, 2022. 
+[<a href="https://doi.org/10.1080/01691864.2022.2115316">DOI</a>&nbsp;]
+
+- Gustavo A. Garcia Ricardez, Pedro M. Uriguen Eljuri, Yuta Kamemura, Shiori Yokota, Noriyuki Kugou, Yoshitatsu Asama, Ziyu Wang, Hikaru Kumamoto, Kotaro Yoshimoto, Wai Y Chan, Tomoki Nagatani, Pattaraporn Tulathum, Bunyapon Usawalertkamol, Lotfi El Hafi, Hiroki Ikeuchi, Masaki Yamamoto, Jun Takamatsu, Tadahiro Taniguchi, and Tsukasa Ogasawara:&nbsp;&ldquo;Autonomous service robot for human-aware restock, straightening and disposal tasks in retail automation,&rdquo; Advanced Robotics,
+  vol.&nbsp;36, no.&nbsp;17-18, pp. 936-950, 2022. 
+[<a href="https://doi.org/10.1080/01691864.2022.2109429">DOI</a>&nbsp;]
 
 - Akishige Yuguchi, Takumi Nakamura, Mayuki Toyoda, Masayuki Yamada, Pattaraporn Tulathum, Mael Aubert, Gustavo Alfonso Garcia Ricardez, Jun Takamatsu and Tsukasa Ogasawara:&nbsp;&ldquo;Toward robot-agnostic home appliance operation: a task execution framework using motion primitives, ontology, and GUI&rdquo;, Advanced Robotics,
   vol.&nbsp;36, no.&nbsp;11, pp. 548-565, 2022.
